@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content {
+    width: 1000px;
+    height: 100%;
+}
+
+#banner {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.device {
+    width: 1000px;
+    min-height: 300px;
+    max-height: 500px;
+    padding: 5px 40px;
+    border-radius: 20px;
+    background: #111;
+    border: 3px solid white;
+    margin: 5px auto;
+    position: relative;
+    box-shadow: 0px 0px 5px #000;
+}
+.device .arrow-left {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -15px;
+    width: 17px;
+    height: 30px;
+}
+.device .arrow-right {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -15px;
+    width: 17px;
+    height: 30px;
+}
+.swiper-container {
+    height: 300px;
+    width: 640px;
+}
+.content-slide {
+    padding: 20px;
+    color: #fff;
+}
+.title {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.pagination {
+    position: absolute;
+    left: 0;
+    text-align: center;
+    bottom:0px;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 0px;
+}
+.swiper-pagination-switch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #999;
+    box-shadow: 0px 1px 2px #555 inset;
+    margin: 0 3px;
+    cursor: pointer;
+}
+.swiper-active-switch {
+    background: #fff;
+}

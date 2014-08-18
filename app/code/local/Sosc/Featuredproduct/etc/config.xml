@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sosc_Featuredproduct>
+            <version>0.4.0</version>
+        </Sosc_Featuredproduct>
+    </modules>
+    <global>
+        <models>
+            <featuredproduct>
+                <class>Sosc_Featureproduct_Model</class>
+            </featuredproduct>
+        </models>
+        <blocks>
+            <featuredproduct>
+                <class>Sosc_Featuredproduct_Block</class>
+            </featuredproduct>
+        </blocks>
+        <helpers>
+            <featuredproduct>
+                <class>Sosc_Featuredproduct_Helper</class>
+            </featuredproduct>
+        </helpers>
+        <resources>
+            <sosc_featuredproduct_setup>
+                <setup>
+                    <module>Sosc_Featuredproduct</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </sosc_featuredproduct_setup>
+            <sosc_featuredproduct_setup_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </sosc_featuredproduct_setup_write>
+            <sosc_featuredproduct_setup_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </sosc_featuredproduct_setup_read>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <featured>
+                <use>standard</use>
+                <args>
+                    <module>Sosc_Featuredproduct</module>
+                    <frontName>featured</frontName>
+                </args>
+            </featured>
+        </routers>
+
+        <events>
+
+        </events>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Sosc_Featuredproduct before="Mage_Adminhtml">Sosc_Featuredproduct_Adminhtml</Sosc_Featuredproduct>
+                    </modules>
+
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <featuredproduct>
+                    <file>sosc_featuredproduct.xml</file>
+                </featuredproduct>
+            </updates>
+        </layout>
+        <events>
+            <catalog_product_prepare_save >
+                <observers>
+                    <featuredproduct>
+                        <class>Sosc_Featuredproduct_Model_Observer_Featured</class>
+                        <method>catalog_product_prepare_save</method>
+                    </featuredproduct>
+                </observers>
+            </catalog_product_prepare_save>
+        </events>
+    </adminhtml>
+</config>

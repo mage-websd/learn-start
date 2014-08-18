@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <smartosc_converturl_world_view>
+        <!--
+            update handle `catalog_product_view` - layout product detail
+        -->
+        <update handle="catalog_product_view"/>
+
+        <!--
+            add text in block `product.info.additional`, after block `product_tag_list`
+        -->
+        <reference name="product.info.additional">
+            <block type="core/text"
+                   name="addtext.after.tagsblock"
+                   after="product_tag_list">
+
+                <!--
+                    method `setText` to add
+                -->
+                <action method="addText">
+                    <text>
+                         Code by giangnt
+                    </text>
+                </action>
+            </block>
+        </reference>
+
+    </smartosc_converturl_world_view>
+</layout>

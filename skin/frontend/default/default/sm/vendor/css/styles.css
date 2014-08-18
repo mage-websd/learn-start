@@ -1,0 +1,129 @@
+.clear{
+    clear: both;
+}
+a{
+    text-decoration: none;
+    color: #000055;
+}
+.btn-user{
+    border-radius: 5px;
+    border: 1px solid #0033ff;
+    background-color: #0033ff;
+    padding: 5px 15px;
+    color: #ffffff;
+    cursor: pointer;
+}
+.btn-user:hover{
+    background-color: #006AA9;
+}
+.table-vendor{
+    width: 480px;
+}
+.table-vendor thead{
+    background-color: #1919b5;
+    color: #ffffff;
+}
+td{
+    text-align: center;
+}
+.validation-advice{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.vendor-add{
+    margin: 10px 0px 20px 0px;
+}
+.form-gr{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 450px;
+}
+.form-gr label{
+    float: left;
+    width: 100px;
+}
+.form-gr input[type=text],.form-gr textarea{
+    height: 30px;
+    width: 250px;
+    border-radius: 10px;
+}
+.form-gr.body-mail{
+    margin-top: 20px;
+}
+.form-gr.body-mail textarea{
+    height: 100px;
+    resize: none;
+}
+.form-gr.submit{
+    text-align: center;
+    margin-top: 20px;
+}
+.form-gr.submit input{
+    margin-left: 10px;
+}
+.btn-submit{
+    padding: 10px 20px;
+}
+.vendor-list{
+    width: 480px;
+}
+.vendor-o{
+    background-color: #c6c6c6;
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.vendor-logo{
+    float: left;
+    margin-right: 20px;
+}
+.vendor-logo img{
+    max-width: 150px;
+    height: auto;
+
+}
+.vendor-info{
+    font-size: 15px;
+}
+.ajax-check-mail{
+    margin-top: 6px;
+    height: 16px;
+}
+.select-sent-mail{
+    width: 25px;
+}
+.vendor-head-btn{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#edit-logo-vendor{
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.product-list{
+    width: 890px;
+}
+.product-o{
+    background-color: #c6c6c6;
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 415px;
+    float: left;
+    margin-left: 5px;
+}
+.product-logo{
+    float: left;
+    margin-right: 20px;
+}
+.product-logo img{
+    max-width: 150px;
+    height: auto;
+
+}
+.product-info{
+    font-size: 15px;
+}

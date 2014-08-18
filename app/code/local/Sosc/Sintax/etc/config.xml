@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sosc_Sintax>
+            <version>0.1.0</version>
+        </Sosc_Sintax>
+    </modules>
+    <global>
+        <models>
+            <sintax>
+                <class>Sosc_Sintax_Model</class>
+            </sintax>
+        </models>
+        <blocks>
+            <sintax>
+                <class>Sosc_Sintax_Block</class>
+            </sintax>
+        </blocks>
+        <helpers>
+            <sintax>
+                <class>Sosc_Sintax_Helper</class>
+            </sintax>
+        </helpers>
+    </global>
+
+    <!--<admin>
+        <routers>
+            <sintax>
+                <use>admin</use>
+                <args>
+                    <module>Sosc_Sintax</module>
+                    <frontName>sintax</frontName>
+                </args>
+            </sintax>
+        </routers>
+    </admin>-->
+
+    <admin>
+        <routers>
+            <!--<sosc_sintax>
+                <use>admin</use>
+                <args>
+                    <module>Sosc_Sintax</module>
+                    <frontName>sintax</frontName>
+                </args>
+            </sosc_sintax>-->
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Sosc_Sintax before="Mage_Adminhtml">Sosc_Sintax_Adminhtml</Sosc_Sintax>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <sintax>
+                    <file>sosc_sintax.xml</file>
+                </sintax>
+            </updates>
+        </layout>
+    </adminhtml>
+
+</config>

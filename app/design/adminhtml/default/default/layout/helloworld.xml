@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <!--<adminhtml_customer_edit>
+        <reference name="left">
+            <reference name="customer_edit_tabs">
+                <block type="helloworld/adminhtml_customer_edit_tab_helloworld"
+                       name="tab_helloworld_main" template="smartosc/helloworld/customer/main.phtml">
+                </block>
+                <action method="addTab">
+                    <name>smartosc_helloworld</name>
+                    <block>tab_helloworld_main</block>
+                </action>
+            </reference>
+        </reference>
+    </adminhtml_customer_edit>-->
+
+    <adminhtml_customer_edit>
+        <reference name="left">
+            <reference name="customer_edit_tabs">
+                <block type="helloworld/adminhtml_customer_edit_tab_helloworld"
+                       name="tab_giftregistry_main"
+                       template="smartosc/helloworld/customer/main.phtml">
+                    <block type="helloworld/adminhtml_customer_edit_tab_helloworld_list"
+                           name="tab_helloworld_list"
+                           as="helloworld_list"/>
+                </block>
+                <action method="addTab">
+                    <name>smartosc_helloworld</name>
+                    <block>tab_giftregistry_main</block>
+                </action>
+            </reference>
+        </reference>
+    </adminhtml_customer_edit>
+
+    <adminhtml_helloworld_index>
+        <reference name="content">
+            <block type="helloworld/adminhtml_registries"
+                   name="registries" />
+        </reference>
+    </adminhtml_helloworld_index>
+</layout>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Smartosc_Converturl>
+            <version>0.1.0</version>
+        </Smartosc_Converturl>
+    </modules>
+    <global>
+        <blocks>
+            <smartosc_converturl>
+                <class>Smartosc_Converturl_Block</class>
+            </smartosc_converturl>
+        </blocks>
+
+    </global>
+
+    <frontend>
+        <routers>
+            <smartosc_converturl>
+                <use>standard</use>
+                <args>
+                    <module>Smartosc_Converturl</module>
+                    <frontName>hello</frontName>
+                </args>
+            </smartosc_converturl>
+        </routers>
+
+        <layout>
+            <updates>
+                <smartosc_converturl>
+                    <file>smartosc_converturl.xml</file>
+                </smartosc_converturl>
+            </updates>
+        </layout>
+    </frontend>
+</config>

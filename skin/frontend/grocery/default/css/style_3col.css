@@ -1,0 +1,16 @@
+#left{
+    width: 196px;
+    float: left;
+    height: 100%;
+}
+#right{
+    float: right;
+    width: 196px;
+    height: 100%;
+}
+#content{
+    float: left;
+    width: 600px;
+    margin-left: 1px;
+    height: 100%;
+}

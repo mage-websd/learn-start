@@ -1,0 +1,79 @@
+<?php
+/**
+ * add product of vendor
+ */
+?>
+
+<div class="page-title">
+    <h1><?php echo $this->__('Add product - Vendor') ?></h1>
+</div>
+<form action="<?php echo $this->getUrl('vendor/product/addpost') ?>" method="post" id="form-validate"
+      enctype="multipart/form-data" autocomplete="off">
+    <div class="fieldset">
+        <ul class="form-list">
+            <li class="fields">
+                <div class="field">
+                    <label for="title" class="required"><em>*</em>
+                        Name
+                    </label>
+
+                    <div class="input-box">
+                        <input type="text" name="name"
+                               value=""
+                               class="input-text required-entry"/>
+                    </div>
+                </div>
+            </li>
+
+            <li class="fields">
+                <div class="field">
+                    <label for="image">
+                        Image
+                    </label>
+
+                    <div class="input-box">
+                        <input type="file" name="image" class="input-text required-entry"/>
+                    </div>
+                </div>
+            </li>
+
+            <li class="fields">
+                <div class="field">
+                    <label for="price" class="required"><em>*</em>
+                        Price
+                    </label>
+
+                    <div class="input-box">
+                        <input type="text" name="price"
+                               value=""
+                               class="input-text required-entry validate­digits"/>
+                    </div>
+                </div>
+            </li>
+
+            <li class="fields">
+                <div class="field">
+                    <label for="description" class="required"><em>*</em>
+                        Description
+                    </label>
+
+                    <div class="input-box">
+                        <textarea name="description" class="input-text required-entry"></textarea>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="buttons-set">
+        <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+
+        <button type="submit" title="<?php echo $this->__('Add') ?>" class="button">
+            <span><span><?php echo $this->__('Add') ?></span></span></button>
+    </div>
+</form>
+<script type="text/javascript">
+    //<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+    //]]>
+</script>

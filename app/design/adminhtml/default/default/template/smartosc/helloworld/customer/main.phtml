@@ -1,0 +1,27 @@
+<h1>Giang soda Edit admin</h1>
+<!--<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-customer-view">
+            <?php /*echo $this->__('Customer Gift Registry List') */?>
+        </h4>
+    </div>
+    <table cellspacing="2" class="box-left">
+        <tr>
+            <td>
+                Nothing here
+            </td>
+            <td>
+                <?php /*echo $this->getCustomerId();*/?>
+            </td>
+        </tr>
+    </table>
+</div>-->
+
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-customer-view">
+            <?php echo $this->__
+                ('Customer Gift Registry List') ?></h4>
+    </div>
+    <?php echo $this->getChildHtml('tab_giftregistry_list'); ?>
+</div>

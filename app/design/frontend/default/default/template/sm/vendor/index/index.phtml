@@ -1,0 +1,33 @@
+<?php
+/**
+ * list product of vedor
+ */
+?>
+<h1>Product list product</h1>
+<div class="vendor-head-btn">
+    <a href="<?php echo Mage::getBaseUrl() ?>vendor/index/info" class="btn-user">Vendor Infomation</a>
+</div>
+
+<?php $products = Mage::registry('products');
+
+echo '<div class="product-list">';
+    foreach ($products as $product) {
+    ?>
+    <div class="product-o">
+        <div class="product-logo">
+            <img src="<?php echo Mage::getBaseUrl().$product['image']; ?>" alt="<?php echo $product['name']; ?>"
+                 title=""<?php echo $product['name']; ?>""/>
+        </div>
+        <div class="product-info">
+            <div class="name"><b>Name:</b> <?php echo $product['name']; ?></div>
+            <div class="price"><b>Price:</b> <?php echo $product['price']; ?></div>
+            <div class="description"><b>Desctiption:</b> <?php echo $product['description']; ?></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+<?php
+}//end foreach
+echo $this->getChildHtml('pager'); //pagination
+?>
+</div>

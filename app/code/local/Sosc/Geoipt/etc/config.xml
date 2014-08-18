@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sosc_Geoipt>
+            <version>0.1.0</version>
+        </Sosc_Geoipt>
+    </modules>
+    <global>
+        <models>
+            <sosc_geoipt>
+                <class>Sosc_Geoipt_Model</class>
+            </sosc_geoipt>
+        </models>
+
+        <events>
+            <controller_front_init_before>
+                <observers>
+                    <sosc_geoipt>
+                        <type>singleton</type>
+                        <class>Sosc_Geoipt_Model_Observer</class>
+                        <method>geoip_store</method>
+                    </sosc_geoipt>
+                </observers>
+            </controller_front_init_before>
+        </events>
+    </global>
+</config>

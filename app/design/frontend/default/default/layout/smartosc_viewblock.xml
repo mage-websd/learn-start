@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <smartosc_viewblock_layoutdefault_Three>
+        <block name="root" type="smartosc_viewblock/layout"
+               template="smartosc/viewblock/layout/layout.phtml" output="toHtml">
+
+            <block name="head" type="smartosc_viewblock/layout"
+                   template="smartosc/viewblock/layout/head.phtml"/>
+
+            <block name="header" type="smartosc_viewblock/layout"
+                   template="smartosc/viewblock/layout/header.phtml">
+                <block name="logo" type="smartosc_viewblock/layout"
+                       template="smartosc/viewblock/layout/logo.phtml"/>
+            </block>
+
+            <block name="left" type="smartosc_viewblock/layout"
+                   template="smartosc/viewblock/layout/left.phtml">
+                <block name="block.c" type="smartosc_viewblock/content"
+                       template="smartosc/viewblock/index/c.phtml"/>
+            </block>
+
+            <block name="content" type="smartosc_viewblock/content"/>
+
+            <block name="right" type="smartosc_viewblock/layout"
+                   template="smartosc/viewblock/layout/right.phtml"/>
+            <block name="footer" type="smartosc_viewblock/layout"
+
+                   template="smartosc/viewblock/layout/footer.phtml"/>
+        </block>
+    </smartosc_viewblock_layoutdefault_Three>
+
+    <smartosc_viewblock_index_index>
+
+        <update handle="smartosc_viewblock_layoutdefault_Three"/>
+        <reference name="head">
+            <action method="setTitlePage">
+                <args>Home 3 column</args>
+            </action>
+        </reference>
+
+        <reference name="content">
+            <action method="setTemplate">
+                <template>smartosc/viewblock/index/index.phtml</template>
+            </action>
+            <block name="block.a" type="smartosc_viewblock/content"
+                   template="smartosc/viewblock/index/a.phtml"/>
+            <block name="block.b" type="smartosc_viewblock/content"
+                   template="smartosc/viewblock/index/b.phtml"/>
+        </reference>
+
+        <reference name="left">
+            <block name="block.c" type="smartosc_viewblock/content"
+                   template="smartosc/viewblock/index/c.phtml"/>
+        </reference>
+
+        <reference name="right">
+            <block name="block.d" type="smartosc_viewblock/content"
+                   template="smartosc/viewblock/index/d.phtml"/>
+        </reference>
+
+    </smartosc_viewblock_index_index>
+
+
+    <smartosc_viewblock_layoutdefault_Two>
+        <block name="root" type="smartosc_viewblock/layout"
+               template="smartosc/viewblock/layouttwo/layout.phtml">
+
+            <block name="head" type="smartosc_viewblock/layout"
+                   template="smartosc/viewblock/layouttwo/head.phtml"/>
+
+            <block name="header" type="smartosc_viewblock/layout"
+                   template="smartosc/viewblock/layouttwo/header.phtml">
+                <block name="logo" type="smartosc_viewblock/layout"
+                       template="smartosc/viewblock/layouttwo/logo.phtml"/>
+            </block>
+
+            <block name="left" type="smartosc_viewblock/layout"
+                   template="smartosc/viewblock/layouttwo/left.phtml">
+            </block>
+
+            <block name="content" type="smartosc_viewblock/content"/>
+
+            <block name="footer" type="smartosc_viewblock/layout"
+                   template="smartosc/viewblock/layouttwo/footer.phtml"/>
+
+        </block>
+    </smartosc_viewblock_layoutdefault_Two>
+
+    <smartosc_viewblock_two_index>
+        <update handle="smartosc_viewblock_layoutdefault_Two"/>
+
+        <reference name="head">
+            <action method="setTitlePage">
+                <args>Home 2 column</args>
+            </action>
+        </reference>
+
+        <reference name="content">
+            <action method="setTemplate">
+                <template>smartosc/viewblock/two/index.phtml</template>
+            </action>
+            <block name="block.a" type="smartosc_viewblock/content"
+                   template="smartosc/viewblock/two/a.phtml"/>
+            <block name="block.b" type="smartosc_viewblock/content"
+                   template="smartosc/viewblock/two/b.phtml"/>
+        </reference>
+
+        <reference name="left">
+            <block name="block.c" type="smartosc_viewblock/content"
+                   template="smartosc/viewblock/two/c.phtml"/>
+            <block name="block.d" type="smartosc_viewblock/content"
+                   template="smartosc/viewblock/two/d.phtml"/>
+        </reference>
+
+    </smartosc_viewblock_two_index>
+
+</layout>

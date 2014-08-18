@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Smartosc_Priceapply>
+            <version>0.1.0</version>
+        </Smartosc_Priceapply>
+    </modules>
+    <global>
+        <models>
+            <priceapply>
+                <class>Smartosc_Priceapply_Model</class>
+            </priceapply>
+        </models>
+    </global>
+
+    <frontend>
+        <events>
+            <catalog_product_get_final_price>
+                <observers>
+                    <priceapply_price_productdetail>
+                        <type>singleton</type>
+                        <class>Smartosc_Priceapply_Model_Price_Product</class>
+                        <method>applyDetail</method>
+                    </priceapply_price_productdetail>
+                </observers>
+            </catalog_product_get_final_price>
+            
+            <checkout_cart_product_add_after>
+                <observers>
+                    <priceapply_price_productdetail>
+                        <type>singleton</type>
+                        <class>Smartosc_Priceapply_Model_Price_Product</class>
+                        <method>applyCart</method>
+                    </priceapply_price_productdetail>
+                </observers>
+            </checkout_cart_product_add_after>
+            
+            <catalog_product_collection_load_after>                
+                <observers>
+                    <priceapply_price_productdetail>
+                        <type>singleton</type>
+                        <class>Smartosc_Priceapply_Model_Price_Product</class>
+                        <method>applyCatalog</method>
+                    </priceapply_price_productdetail>
+                </observers>
+            </catalog_product_collection_load_after>
+
+        </events>
+        
+        <routers>
+            <priceapply>
+                <use>standard</use>
+                <args>
+                    <module>Smartosc_Priceapply</module>
+                    <frontName>priceapply</frontName>
+                </args>
+            </priceapply>
+        </routers>
+    </frontend>
+
+</config>

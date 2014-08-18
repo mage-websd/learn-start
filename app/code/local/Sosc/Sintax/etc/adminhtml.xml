@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <sosc translate="title">
+            <children>
+                <cus_mage_form>
+                    <title>Form</title>
+                    <sort_order>2</sort_order>
+                    <action>adminhtml/formcustom/index</action>
+                </cus_mage_form>
+            </children>
+        </sosc>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <sosc translate="title">
+                        <title>Top Level Pulse Storm Menu Item</title>
+                        <sort_order>1</sort_order>
+                    </sosc>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

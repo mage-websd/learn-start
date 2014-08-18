@@ -1,0 +1,30 @@
+<div id="logo">
+    <img src="<?php echo $this->getSkinDes();?>images/logo.jpg" alt="giang"/>
+</div>
+<div id="menu">
+	<div class="clear"></div>
+    <ul class="nav nav-pills">
+        <?php
+            echo $this->getCategoryAll();
+        ?>
+    </ul>
+</div>
+
+<?php
+
+//$this->getLevelMenuMax();
+echo '<style>';
+for($i = 1 ; $i < 10 ; $i++) {
+    echo '.dropdown-menu li ul.sub-menu-'.$i.':hover ul.sub-menu-'.($i+1).'{
+    visibility: visible;}';
+}
+echo '</style>';
+?>
+
+<script>
+$(document).ready(function(){
+    $('a.dropdown-toggle').click(function(){
+        return true;
+    });
+});
+</script>

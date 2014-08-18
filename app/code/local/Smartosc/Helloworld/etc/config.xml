@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Smartosc_Helloworld>
+            <version>0.5.0</version>
+        </Smartosc_Helloworld>
+    </modules>
+    <global>
+        <models>
+            <helloworld>
+                <class>Smartosc_Helloworld_Model</class>
+                <resourceModel>helloworld_resource</resourceModel>
+            </helloworld>
+            <helloworld_resource>
+                <class>Smartosc_Helloworld_Model_Resource</class>
+                <entities>
+                    <datatest>
+                        <table>helloworld_datatest</table>
+                    </datatest>
+                    <data>
+                        <table>helloworld_data</table>
+                    </data>
+                </entities>
+            </helloworld_resource>
+        </models>
+
+        <blocks>
+            <helloworld>
+                <class>Smartosc_Helloworld_Block</class>
+            </helloworld>
+        </blocks>
+
+        <helpers>
+            <helloworld>
+                <class>Smartosc_Helloworld_Helper</class>
+            </helloworld>
+        </helpers>
+
+        <resources>
+            <smartosc_helloworld_setupthr>
+                <setup>
+                    <module>Smartosc_Helloworld</module>
+                    <class>Smartosc_Helloworld_Model_Resource_Setup_Newtable</class>
+                </setup>
+                <!--                <connection>
+                    <use>core_setup</use>
+                </connection>-->
+            </smartosc_helloworld_setupthr>
+
+
+            <!--            <helloworld_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </helloworld_write>
+            
+            <helloworld_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </helloworld_read>-->
+        </resources>
+    </global>
+
+    <frontend>        
+        <routers>
+            <helloworld>
+                <use>standard</use>
+                <args>
+                    <module>Smartosc_Helloworld</module>
+                    <frontName>helloworld</frontName>
+                </args>
+            </helloworld>
+        </routers>
+
+        <layout>
+            <updates>
+                <helloworld>
+                    <file>smartosc_helloworld.xml</file>
+                </helloworld>
+            </updates>
+        </layout>
+    </frontend>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <helloworld before="Mage_Adminhtml">Smartosc_Helloworld_Adminhtml</helloworld>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <helloworld module="smartosc_helloworld">
+                    <file>helloworld.xml</file>
+                </helloworld>
+            </updates>
+        </layout>
+    </adminhtml>
+
+</config>

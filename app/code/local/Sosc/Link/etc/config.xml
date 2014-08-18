@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sosc_Link>
+            <version>0.1.0</version>
+        </Sosc_Link>
+    </modules>
+    <global>
+        <helpers>
+            <link>
+                <class>Sosc_Link_Helper</class>
+            </link>
+        </helpers>
+    </global>
+</config>

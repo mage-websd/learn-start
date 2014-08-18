@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="<?php echo $this->getSkinDes(); ?>idangerous/css/idangerous.swiper.css">
+<style>
+    .device .arrow-left {
+        background: url(<?php echo $this->getSkinDes();?>images/arrows.png) no-repeat left top;
+    }
+
+    .device .arrow-right {
+        background: url(<?php echo $this->getSkinDes();?>images/arrows.png) no-repeat left bottom;
+    }
+</style>
+
+<div class="device">
+    <a class="arrow-left" href="#"></a>
+    <a class="arrow-right" href="#"></a>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" data-click="0">
+                <img src="<?php echo $this->getSkinDes(); ?>images/slider1-1.png">
+            </div>
+            <div class="swiper-slide" data-click="1">
+                <img src="<?php echo $this->getSkinDes(); ?>images/slider1-2.png">
+            </div>
+            <div class="swiper-slide" data-click="2">
+                <div class="content-slide">
+                    <p class="title">Slide with HTML</p>
+
+                    <p>You can put any HTML inside of slide with any layout, not only images, even another Swiper!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pagination"></div>
+</div>
+
+<script src="<?php echo $this->getSkinDes(); ?>idangerous/js/jquery-1.10.1.min.js"></script>
+<script src="<?php echo $this->getSkinDes(); ?>idangerous/js/idangerous.swiper-2.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        function nextSlile() {
+            $slideActive = $('.pagination').find('.swiper-visible-switch.swiper-active-switch');
+            if($slideActive.is(':last-child')){
+                $('.pagination').children().first().click();
+            }
+            else{
+                $slideActive.next().click();
+            }
+        }
+        var mySwiper = new Swiper('.swiper-container', {
+            pagination: '.pagination',
+            loop: true,
+            grabCursor: true,
+            paginationClickable: true
+        });
+        setInterval(function () {
+            nextSlile();
+        }, 5000);
+        $('.arrow-left').click(function (e) {
+            e.preventDefault();
+            mySwiper.swipePrev();
+        });
+        $('.arrow-right').click(function (e) {
+            e.preventDefault();
+            nextSlile();
+        });
+    });
+</script>

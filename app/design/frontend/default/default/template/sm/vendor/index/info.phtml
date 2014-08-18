@@ -1,0 +1,22 @@
+<?php
+/**
+ * info detail vendor
+ */
+?>
+<h1>Vendor Information</h1>
+<div class="vendor-head-btn">
+    <a href="<?php echo Mage::getBaseUrl() ?>vendor/index/index" class="btn-user">Vendor product</a>
+    <a href="<?php echo Mage::getBaseUrl() ?>customer/account/edit" class="btn-user">Vendor Edit</a>
+</div>
+
+<?php $vendor = Mage::registry('vendor'); ?>
+
+<div class="vendor-logo">
+    <img src="<?php echo Mage::getBaseUrl() . $vendor['logo']; ?>"/>
+</div>
+<div class="vendor-info">
+    <div class="name"><b>Name:</b> <?php echo $vendor['firstname'].' '.$vendor['lastname']; ?></div>
+    <div class="email"><b>Email:</b> <?php echo $vendor['email']; ?></div>
+    <div class="paypal-account"><b>Paypal Account:</b> <?php echo $vendor['paypal_account']; ?></div>
+</div>
+<div class="clear"></div>

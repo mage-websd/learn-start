@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <helloworld>
+            <title>Helloworld</title>
+            <sort_order>71</sort_order>
+            <children>
+                <items>
+                    <title>Manage Helloworld</title>
+                    <sort_order>0</sort_order>
+                    <action>adminhtml/helloworld/index</action>
+                    <children>
+                        <items>
+                            <title>Sub menu2</title>
+                            <sort_order>0</sort_order>
+                            <action>adminhtml/helloworld/edit</action>
+                        </items>
+                    </children>
+                </items>
+            </children>
+       </helloworld>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <helloworld translate="title">
+                        <title>Menu acl Giangsoda</title>
+                        <sort_order>300</sort_order>
+                        <children>
+                            <items translate="title">
+                                <title>Manage Registries</title>
+                                <sort_order>0</sort_order>
+                            </items>
+                        </children>
+                    </helloworld>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

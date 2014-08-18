@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <?php echo $this->getChildHtml('head'); ?>
+</head>
+<body>
+<div id="wapper">
+    <div id="header">
+        <?php echo $this->getChildHtml('header');?>
+    </div>
+
+    <div id="container">
+        <div id="left">
+            <?php echo $this->getChildHtml('left');?>
+        </div>
+
+        <div id="content">
+            <?php echo $this->getChildHtml('content');?>
+        </div>
+
+        <div id="right">
+            <?php echo $this->getChildHtml('right');?>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div id="footer">
+        <?php echo $this->getChildHtml('footer');?>
+    </div>
+</div>
+
+</body>
+</html>

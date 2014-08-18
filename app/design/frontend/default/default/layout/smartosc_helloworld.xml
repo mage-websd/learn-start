@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <helloworld_index_index>
+        <reference name="head">
+            <block name="block.header.hell" type="core/template"
+                   template="smartosc/helloworld/layout/head.phtml"
+            />
+        </reference>
+    </helloworld_index_index>
+</layout>

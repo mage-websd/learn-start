@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Vendor>
+            <version>0.1.0</version>
+        </SM_Vendor>
+    </modules>
+    <global>
+        <models>
+            <sm_vendor>
+                <class>SM_Vendor_Model</class>
+                <resourceModel>sm_vendor_resource</resourceModel>
+            </sm_vendor>
+        </models>
+        <blocks>
+            <sm_vendor>
+                <class>SM_Vendor_Block</class>
+            </sm_vendor>
+
+            <!--rewrite block Mage_Customer_Block_Form_Register -->
+            <customer>
+                <rewrite>
+                    <form_register>SM_Vendor_Block_Urls</form_register>
+                </rewrite>
+            </customer>
+
+        </blocks>
+
+        <helpers>
+            <sm_vendor>
+                <class>SM_Vendor_Helper</class>
+            </sm_vendor>
+        </helpers>>
+
+
+
+        <resources>
+            <sm_vendor_setup_customer>
+                <setup>
+                    <module>SM_Vendor</module>
+                    <class>SM_Vendor_Model_Resource_Setup_Customer</class>
+                </setup>
+            </sm_vendor_setup_customer>
+
+            <sm_vendor_setup_product>
+                <setup>
+                    <module>SM_Vendor</module>
+                    <class>SM_Vendor_Model_Resource_Setup_Product</class>
+                </setup>
+            </sm_vendor_setup_product>
+
+        </resources>
+    </global>
+
+    <frontend>
+        <routers>
+            <sm_vendor>
+                <use>standard</use>
+                <args>
+                    <module>SM_Vendor</module>
+                    <frontName>vendor</frontName>
+                </args>
+            </sm_vendor>
+
+            <customer>
+                <args>
+                    <modules>
+                        <sm_vendor before="Mage_Customer">SM_Vendor</sm_vendor>
+                    </modules>
+                </args>
+            </customer>
+        </routers>
+
+        <layout>
+            <updates>
+                <sm_vendor>
+                    <file>sm_vendor.xml</file>
+                </sm_vendor>
+            </updates>
+        </layout>
+    </frontend>
+</config>

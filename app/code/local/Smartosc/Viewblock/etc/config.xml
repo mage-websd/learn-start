@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Smartosc_Viewblock>
+            <version>0.1.0</version>
+        </Smartosc_Viewblock>
+    </modules>
+    <global>
+        <blocks>
+            <smartosc_viewblock>
+                <class>Smartosc_Viewblock_Block</class>
+            </smartosc_viewblock>
+        </blocks>
+    </global>
+    <frontend>
+        <routers>
+            <smartosc_viewblock>
+                <use>standard</use>
+                <args>
+                    <module>Smartosc_Viewblock</module>
+                    <frontName>viewblock</frontName>
+                </args>
+            </smartosc_viewblock>
+        </routers>
+        <!--<layout>-->
+            <!--<updates>-->
+                <!--<smartosc_viewblock>-->
+                    <!--<file>smartosc_viewblock.xml</file>-->
+                <!--</smartosc_viewblock>-->
+            <!--</updates>-->
+        <!--</layout>-->
+    </frontend>
+</config>

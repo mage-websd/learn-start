@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <sosc translate="title">
+            <title>Menu Custom</title>
+            <sort_order>100</sort_order>
+            <children>
+                <featured>
+                    <title>Featured Products</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/featured/index</action>
+                </featured>
+            </children>
+        </sosc>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <sosc translate="title">
+                        <title>Top Level Pulse Storm Menu Item</title>
+                        <sort_order>1</sort_order>
+                    </sosc>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

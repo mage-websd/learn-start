@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <!--handle core , update customer type-->
+    <customer_account_create>
+        <reference name="head">
+            <block name="vendor.head" type="sm_vendor/layout"
+                   template="sm/vendor/layout/head.phtml"/>
+        </reference>
+
+        <reference name="customer_form_register">
+            <block name="form.additional.info" type="page/html" before="-"
+                   template="sm/vendor/customer/block_vendor_type.phtml"/>
+        </reference>
+    </customer_account_create>
+
+    <!--
+        reference cutomer_account: Dashboard customer
+            Add link if is vendor
+    -->
+    <customer_account>
+        <reference name="left">
+            <block type="customer/account_navigation" name="customer_vendor" before="-"
+                   template="sm/vendor/customer/block_navigation_left.phtml">
+                <action method="addLink" translate="label" module="customer">
+                    <name>Vendor add product</name>
+                    <path>vendor/product/add</path>
+                    <label>Add product</label>
+                </action>
+
+                <action method="addLink" translate="label" module="customer">
+                    <name>Vendor product list</name>
+                    <path>vendor/index/index</path>
+                    <label>Product list</label>
+                </action>
+            </block>
+        </reference>
+    </customer_account>
+
+    <customer_account_edit>
+        <reference name="customer_edit">
+            <action method="setTemplate">
+                <template>sm/vendor/customer/edit.phtml</template>
+            </action>
+        </reference>
+    </customer_account_edit>
+
+    <!-- layout addproduct of vendor -->
+    <sm_vendor_product_add>
+        <label>Vendor add product</label>
+        <update handle="customer_account"/>
+
+        <reference name="head">
+            <action method="setTitle">
+                <title>Vendor add product</title>
+            </action>
+            <block type="sm_vendor/layout" name="head.customer"
+                   template="sm/vendor/layout/head.phtml"/>
+        </reference>
+        <reference name="my.account.wrapper">
+            <block type="customer/form_edit" name="customer_vendor_addproduct"
+                   template="sm/vendor/product/add.phtml"/>
+        </reference>
+
+        <!--<reference name="left">
+            <action method="unsetChild"><name>left.permanent.callout</name></action>
+        </reference>-->
+    </sm_vendor_product_add>
+
+
+    <!--
+        module SM_Vendor - handle default
+    -->
+    <sm_vendor_default>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+
+        <reference name="head">
+            <block name="vendor.head" type="sm_vendor/layout"
+                   template="sm/vendor/layout/head.phtml"/>
+        </reference>
+    </sm_vendor_default>
+
+    <sm_vendor_index_index>
+        <update handle="sm_vendor_default"/>
+
+        <reference name="head">
+            <action method="setTitle">
+                <title>Information - Vendor</title>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="vendor.index"
+                   template="sm/vendor/index/index.phtml"/>
+        </reference>
+    </sm_vendor_index_index>
+
+    <sm_vendor_index_info>
+        <update handle="sm_vendor_default"/>
+
+        <reference name="head">
+            <action method="setTitle">
+                <title>Information - Vendor</title>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="page/html" name="vendor.information"
+                   template="sm/vendor/index/info.phtml"/>
+        </reference>
+    </sm_vendor_index_info>
+</layout>

@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<widgets>
+    <helloworld_digg type="helloworld/digg">
+        <name>Bookmark: Digg</name>
+        <description type="desc">Adds a simple "You Digg?" link</description>
+    </helloworld_digg>
+
+    <helloworld_twitter type="helloworld/twitter">
+        <name>Bookmark: Twitter</name>
+        <description type="desc">Adds a simple "Tweet This!" link</description>
+    </helloworld_twitter>
+
+    <helloworld_delicious type="helloworld/delicious">
+        <name>Bookmark: Delicious</name>
+        <description type="desc">Adds a simple delicious.com bookmarking link</description>
+    </helloworld_delicious>
+
+    <helloworld_widget_one
+            type="helloworld/widget_one" translate="name description" module="modulename">
+        <name>Widget name</name>
+
+        <description>Short widget description</description>
+
+        <!-- Additional javascript files to be loaded
+            on the widget configuration edit form if needed. -->
+        <!--
+            It should contain comma separated list
+            of javascript files paths under the /js directory.
+            This tag is optional.
+        -->
+        <js>mage/adminhtml/first.js,mage/adminhtml/second.js</js>
+
+
+        <parameters>
+            <first_option translate="label">
+                <!-- General option properties -->
+
+                <!-- Defines if the option is allowed to be empty -->
+                <required>1</required>
+
+                <!-- Defines if the option is visible in the edit form -->
+                <visible>1</visible>
+                <!--
+                    In case if you need some hidden input
+                    in the widget configuration form,
+                    set 'visible' to 0
+                -->
+
+                <!-- Label for the edit form -->
+                <label>Option name</label>
+
+                <!-- Option type -->
+                <type>select</type>
+                <!--
+                    It can be either one of the simple form element types, e.g.:
+                        <type>text</type>
+                        <type>select</type>
+                        <type>multiselect</type>
+                        <type>label</type>
+                    ...
+
+                    or it can define a renderer which will be used to create
+                    this configuration field in the edit form.
+                    Renderer is supposed to be a block reference
+                    in 'block_group/block_path' format, e.g.:
+                        <type>mymodule/some_custom_block</type>
+                -->
+
+                <!-- Source values for drop-downs and multiselects -->
+
+                <!--
+                    There are two possible ways to define a set of available values.
+                    The first way is to specify the list of available values right here:
+        `        -->
+                <values>
+                    <one translate="label">
+                        <value>1</value>
+                        <label>One</label>
+                    </one>
+                    <two translate="label">
+                        <value>2</value>
+                        <label>Two</label>
+                    </two>
+                    <three translate="label">
+                        <value>3</value>
+                        <label>Three</label>
+                    </three>
+                </values>
+
+                <!--
+                    The second way is to specify the source model,
+                    which must have toOptionArray() public method available.
+                    The method should return an array of values and labels
+                    in the following format:
+                        array(
+                            array('value' => 'value1', 'label' => 'Label 1'),
+                            array('value' => 'value2', 'label' => 'Label 2'),
+                            array('value' => 'value2', 'label' => 'Label 3'),
+                        );
+                    Source model name is specified in usual
+                    'model_group/model_path' format, e.g.:
+                -->
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+
+                <!-- Additional helper block to be created on the edit form page, optional -->
+                <helper_block>
+                    <!-- Helper block reference in regular 'block_group/block_path' format -->
+                    <type>helloworld/widget_one</type>
+
+                    <!-- Arguments for the block constructor, optional  -->
+                    <data>
+                        <value1>Value1</value1>
+                        <value2>Value1</value2>
+                        <value3>
+                            <one>One</one>
+                            <two>Two</two>
+                        </value3>
+                    </data>
+                </helper_block>
+
+                <!--
+                    Here is the full example of helper block definition
+                    from catalog module widgets:
+
+                    <helper_block>
+                        <type>adminhtml/catalog_product_widget_chooser</type>
+                        <data>
+                            <button translate="open">
+                                <open>Select Product...</open>
+                            </button>
+                        </data>
+                    </helper_block>
+
+                -->
+            </first_option>
+
+            <!--
+                ...
+                any number of other widget configuration options goes here
+                ...
+            -->
+        </parameters>
+    </helloworld_widget_one>
+
+    <!--
+        ...
+        other widgets declarations go here
+        ...
+    -->
+</widgets>
