@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Smartosc_Priceapply>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Smartosc_Priceapply>
+    </modules>
+</config>

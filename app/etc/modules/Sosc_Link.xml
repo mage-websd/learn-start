@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sosc_Link>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Sosc_Link>
+    </modules>
+</config>

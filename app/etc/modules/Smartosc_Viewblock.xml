@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Smartosc_Viewblock>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Smartosc_Viewblock>
+    </modules>
+</config>

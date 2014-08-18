@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sosc_Geoipt>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Sosc_Geoipt>
+    </modules>
+</config>

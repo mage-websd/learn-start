@@ -27,7 +27,6 @@
 /lib
 /errors
 /downloader
-/app/etc
 /app/Mage.php
 /includes
 /js
