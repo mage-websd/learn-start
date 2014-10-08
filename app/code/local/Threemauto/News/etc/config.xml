@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Threemauto_News>
+            <version>0.1.0</version>
+        </Threemauto_News>
+    </modules>
+    <global>
+        <models>
+            <news>
+                <class>Threemauto_News_Model</class>
+                <resourceModel>news_resource</resourceModel>
+            </news>
+            <news_resource>
+                <class>Threemauto_News_Model_Resource</class>
+                <entities>
+                    <news>
+                        <table>grid_test</table>
+                    </news>
+                </entities>
+            </news_resource>
+        </models>
+        <blocks>
+            <news>
+                <class>Threemauto_News_Block</class>
+            </news>
+        </blocks>
+        <helpers>
+            <news>
+                <class>Threemauto_News_Helper</class>
+            </news>
+        </helpers>
+        <!--<resources>
+            <threemauto_news_setup>
+                <setup>
+                    <module>Threemauto_News</module>
+                </setup>
+            </threemauto_news_setup>
+        </resources>-->
+    </global>
+
+    <frontend>
+        <routers>
+            <Threemauto_News>
+                <use>standard</use>
+                <args>
+                    <module>Threemauto_News</module>
+                    <frontName>newstest</frontName>
+                </args>
+            </Threemauto_News>
+        </routers>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Threemauto_News before="Mage_Adminhtml">Threemauto_News_Adminhtml</Threemauto_News>
+                    </modules>
+
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <news>
+                    <file>news.xml</file>
+                </news>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

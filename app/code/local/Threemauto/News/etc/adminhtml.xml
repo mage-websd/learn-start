@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <giangnt>
+            <children>
+                <newstest1 module="news">
+                    <title>Manage News</title>
+                    <action>adminhtml/custom_news/</action>
+                    <sort_order>2</sort_order>
+                </newstest1>
+            </children>
+        </giangnt>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <giangnt translate="title">
+                        <children>
+                            <newstest1 translate="title">
+                                <title>Grid List</title>
+                            </newstest1>
+                        </children>
+                    </giangnt>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
