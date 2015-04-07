@@ -1,0 +1,28 @@
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('position-5')->toHtml() ?>
+<?php
+if (null == Mage::registry('sns.jquery')){
+    Mage::register('sns.jquery', 1);
+    return 'sns/slider/js/jquery-1.7.2.min.js';
+}
+if (null == Mage::registry('sns.jquerynoconflict')){
+    Mage::register('sns.jquerynoconflict', 1);
+    return 'sns/slider/js/sns.noconflict.js';
+}
+if (null == Mage::registry('sns.owlcarousel')){
+    Mage::register('sns.owlcarousel', 1); ?>
+    <script type="text/javascript" src="<?php echo $this->getSkinUrl('assets/plg_owlslider/owl.carousel.min.js') ?>"></script>
+<?php
+}?>
+<script type="text/javascript">
+//<![CDATA[
+    $sns_jq(document).ready(function($) {
+        $('#sns_brand .list-brands').owlCarousel({
+            itemsCustom: [ [320, 2], [360, 2], [480, 3], [640, 4], [768, 5], [980, 6], [1170, 7] ],
+            navigation : true,
+            slideSpeed: 500,
+            pagination: false,
+            addClassActive: true,
+        });
+    });
+//]]>
+</script>

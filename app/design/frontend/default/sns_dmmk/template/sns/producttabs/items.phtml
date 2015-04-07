@@ -1,0 +1,131 @@
+<?php
+$themeConfig =   Mage::helper('dmmk/data')->get();
+$uniqued = rand().time();
+$options  = $this->getConfigObject();
+$maxtitle = $options->item_title_max_characs;
+$post     = Mage::app()->getRequest()->getPost();
+$type     =  (!empty($post['pdt_type']))?$post['pdt_type']:$options->list_products_by;
+$catid   = (!empty($post['catid']))?$post['catid']:'*';
+$first_ob = explode(',', $options->order_type);
+$orderby = (!empty($post['orderby']))?$post['orderby']:$first_ob[0];
+
+if( $type!='' ){
+	if( $type == 'order' ){
+		$child_items = $this->getProductsOrder($orderby);
+	} else {
+		$child_items = $this->getProductsCat($catid);
+	}
+}
+if( !empty($child_items) ) {
+	if( $type!='' ){
+		$k = $post['numberstart'];
+	} else {
+		$k = 0;
+	}
+foreach( $child_items  as $item ){ $k++;
+$_product = Mage::getModel('catalog/product')->load($item->id);
+$class_first ='';
+$class_first .= (($k-1)%(int)$options->devices_wide == 0)?' wide-first':'';
+$class_first .= (($k-1)%(int)$options->devices_normal == 0)?' normal-first':'';
+$class_first .= (($k-1)%(int)$options->devices_tabletlandscape == 0)?' tabletlandscape-first':'';
+$class_first .= (($k-1)%(int)$options->devices_tabletportrait == 0)?' tabletportrait-first':'';
+$class_first .= (($k-1)%(int)$options->devices_mobilelandscape == 0)?' mobilelandscape-first':'';
+$class_first .= (($k-1)%(int)$options->devices_mobileportrait == 0)?' mobileportrait-first':'';
+?>
+
+<?php
+$now = date("Y-m-d");
+$newsFrom= substr($_product->getData('news_from_date'),0,10);
+$newsTo=  substr($_product->getData('news_to_date'),0,10);
+$price = $_product->getPrice();
+$finalPrice = $_product->getFinalPrice();
+$class = '';
+if($now>=$newsFrom && $now<=$newsTo) $class .= ' have-iconew';
+if( isset($price) && isset($finalPrice) && $finalPrice < $price) $class .= ' have-icosale';
+?>
+	<div class="item item-animate<?php echo $class_first; ?>">
+		<div class="item-inner clearfix">
+			<div class="item-img<?php echo $class; ?><?php echo (count(Mage::getModel('catalog/product')->load($_product->getId())->getMediaGalleryImages()) > 0)?' have-additional':'';?> clearfix">
+            	<?php
+                if ($now>=$newsFrom && $now<=$newsTo && $themeConfig['useTagNew']==1)
+                        echo "<span class='ico-product ico-new'>New</span>";
+                if (isset($price) && isset($finalPrice) && $finalPrice < $price && $themeConfig['useTagSale']==1)
+                        echo "<span class='ico-product ico-sale'><strong>".floor(100-($finalPrice/$price)*100)." %</strong> off</span>";
+                ?>
+                <div class="item-img-info">
+                    <a href="<?php echo $item->link ?>" title="<?php echo $item->title ?>" class="product-image">
+                        <span class="img-main">
+                            <img src="<?php echo $item->image; ?>" alt="<?php echo $item->title ?>"/>
+                        </span>
+                    </a>
+                    <?php
+                    if(class_exists('Sns_Quickview_Helper_Data') && Mage::getStoreConfigFlag('quickview/general/enable') == 1) { ?>
+                    <div class="quickview-wrap">
+                        <a href="<?php echo $item->link ?>" title="<?php echo $item->title ?>" style="display:none"></a>
+                    </div>
+                    <?php 
+                    }?>
+                </div>
+            </div>
+            <div class="item-info">
+                <div class="info-inner">
+                    <?php if( $options->item_title_display == 1 ){?>
+                    <div class="item-title">
+                        <a href="<?php echo $item->link ?>" onclick="javascript: return true"  title="<?php echo $item->title?>" >
+						<?php echo $item->title; ?>
+						</a>
+                    </div>
+                    <?php }?>
+                    <div class="item-content clearfix">
+                        <?php if( $this->item_desc_display == 1 ){?>
+                        <div class="item-des">
+                            <?php echo $item->description; ?>
+                        </div>
+                        <?php }
+                        if( $options->item_price_disp == 1 ){ ?>
+                        <div class="item-price">
+                            <?php echo $this->getPriceHtml($_product, false, $uniqued) ?>
+                        </div>
+                        <?php }?>
+                        <?php
+                        if( $options->item_review_disp == 1 ){ ?>
+                        <div class="rating">
+                        <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+                        <?php //echo $item->review_html; ?>
+                        </div>
+                        <?php } ?>
+                        <?php
+                        $number_buttom = 0;
+                        if($options->item_wishlist_disp) $number_buttom = $number_buttom +1;
+                        if($options->item_compare_disp) $number_buttom = $number_buttom +1;
+                        if($number_buttom > 0 || $options->item_cart_disp){ ?>
+                        <div class="actions<?php echo ($number_buttom > 0)?' more-buttons':''?>">
+                            <?php if( $options->item_cart_disp == 1 ) {?>
+                                <?php if($_product->isSaleable()): ?>
+                                    <button title="<?php echo $this->__('Add to Cart') ?>" class="btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><?php echo $this->__('Add to Cart') ?></button>
+                                <?php else: ?>
+                                    <span class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></span>
+                                <?php endif; ?>
+                            <?php } ?>
+                        <?php if($number_buttom > 0){?>
+                            <ul class="add-to-links">
+                                <?php if ($this->helper('wishlist')->isAllow() && $options->item_wishlist_disp == 1 ): ?>
+                                    <li><a title="<?php echo $this->__('Add to Wishlist') ?>" href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist" data-toggle="tooltip" data-original-title="<?php echo $this->__('Add to Wishlist') ?>"><?php //echo $this->__('Add to Wishlist') ?></a></li>
+                                <?php endif; ?>
+                                <?php if($this->getAddToCompareUrl($_product) && $options->item_compare_disp == 1): 
+                                $_compareUrl=$this->getAddToCompareUrl($_product)
+                                ?>
+                                    <li><a title="<?php echo $this->__('Add to Compare') ?>" href="<?php echo $_compareUrl ?>" class="link-compare" data-toggle="tooltip" data-original-title="<?php echo $this->__('Add to Compare') ?>"><?php //echo $this->__('Add to Compare') ?></a></li>
+                                <?php endif; ?>
+                            </ul>
+                        <?php } ?>
+                        </div>
+                        <?php
+                        } ?>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+<?php }
+}?>

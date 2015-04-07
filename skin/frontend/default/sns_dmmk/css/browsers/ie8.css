@@ -1,0 +1,44 @@
+/* IE8 not support media query */
+body .container{width: 1170px;}
+/* Fix for menu */
+ul.mainnav > li:hover > a,
+ul.mainnav > li.active > a{border-color: #90cbd5;}
+#sns_menu .inner:after{background: #90cbd5;}
+
+.sns-megamenu-wrap.horizontal-menu .mega-nav li.level0 > .mega-content-wrap,
+ul.mainnav li > ul[class*="level"] { visibility: visible !important; top: -999em !important}
+
+.sns-megamenu-wrap.horizontal-menu .mega-nav li.level0:hover > .mega-content-wrap,
+ul.mainnav > li:hover > ul[class*="level"] {top: 100px !important;}
+ul.mainnav > li li:hover > ul[class*="level"] {top: 5px !important;}
+
+#sns_slideshow .sns-slideshow-wrap .teaser{line-height: 18px !important}
+/* quickview */
+.products-list .item .item-img .sns-btn-quickview:before{display: none;}
+.products-list .item .item-img:hover .sns-btn-quickview:before{display: block;}
+
+#sns_off_screennav{display: none;}
+
+.sns-ajaxcart .block-content .block-inner{
+	display: none; visibility: hidden;
+}
+.sns-ajaxcart:hover .block-content .block-inner{
+	display: block !important; visibility: visible !important;
+}
+
+.sns-ajaxcart{
+	z-index: 1;
+}
+.sns-ajaxcart:hover{
+	z-index: 2;
+}
+.stickynote-top .container .btn-close{
+	background: url("../../images/btn-open.png") no-repeat 6px 6px !important;
+}
+body.open-stickynote-top .stickynote-top .btn-close{
+	background: url("../../images/btn-close.png") no-repeat left top !important;
+}
+.hideleft,
+.hideflip {visibility: hidden;}
+.showleft,
+.showflip {visibility: visible;}

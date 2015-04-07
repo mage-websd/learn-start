@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <GiangNT_Shipping>
+            <version>0.1.0</version>
+        </GiangNT_Shipping>
+    </modules>
+    <global>
+        <models>
+            <giangnt_shipping>
+                <class>GiangNT_Shipping_Model</class>
+            </giangnt_shipping>
+        </models>
+        <blocks>
+            <giangnt_shipping>
+                <class>GiangNT_Shipping_Block</class>
+            </giangnt_shipping>
+        </blocks>
+        <helpers>
+            <giangnt_shipping>
+                <class>GiangNT_Shipping_Helper</class>
+            </giangnt_shipping>
+        </helpers>
+        <!--<resources>
+            <giangnt_shipping_setup>
+                <setup>
+                    <module>GiangNT_Shipping</module>
+                </setup>
+            </giangnt_shipping_setup>
+        </resources>-->
+    </global>
+
+    <default>
+        <carriers>
+            <giangnt_shipping>
+                <active>1</active>
+                <model>giangnt_shipping/carrier</model>
+                <title>Giang Shipping Carrier</title>
+                <sort_order>10</sort_order>
+                <sallowspecific>0</sallowspecific>
+                <express_max_weight>1</express_max_weight>
+            </giangnt_shipping>
+        </carriers>
+    </default>
+</config>

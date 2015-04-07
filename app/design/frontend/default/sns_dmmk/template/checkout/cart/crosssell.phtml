@@ -1,0 +1,118 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Cart cross sell items template
+ *
+ * @see Mage_Checkout_Block_Cart_Crosssell
+ */
+?>
+<?php
+$themeConfig =   Mage::helper('dmmk/data')->get();
+if($this->getItemCount()): ?>
+<div class="crosssell">
+    <h2><?php echo $this->__('Based on your selection, you may be interested in the following items:') ?></h2>
+    <ul id="crosssell-products-list" class="products-grid row-fluid clearfix">
+    <?php foreach ($this->getItems() as $_item): ?>
+        <?php
+        $now = date("Y-m-d");
+        $newsFrom= substr($_item->getData('news_from_date'),0,10);
+        $newsTo=  substr($_item->getData('news_to_date'),0,10);
+        $price = $_item->getPrice();
+        $finalPrice = $_item->getFinalPrice();
+        $class = '';
+        if($now>=$newsFrom && $now<=$newsTo) $class .= ' have-iconew';
+        if( isset($price) && isset($finalPrice) && $finalPrice < $price) $class .= ' have-icosale';
+        ?>
+        <li class="item span3<?php echo($themeConfig['displayAddtocart']==1)?' show-addtocart':'';?>">
+                <div class="item-inner">
+                    <div class="item-img">
+                        <?php
+                        if ($now>=$newsFrom && $now<=$newsTo && $themeConfig['useTagNew']==1)
+                            echo "<span class='ico-product ico-new'>New</span>";
+                        if (isset($price) && isset($finalPrice) && $finalPrice < $price && $themeConfig['useTagSale']==1)
+                            echo "<span class='ico-product ico-sale'><strong>".floor(100-($finalPrice/$price)*100)." %</strong> off</span>";
+                        ?>
+                        <div class="item-img-info">
+                            <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(248, 250) ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
+                            <?php
+                            if(class_exists('Sns_Quickview_Helper_Data') && Mage::getStoreConfigFlag('quickview/general/enable') == 1){?>
+                            <div class="quickview-wrap">
+                                <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_item, 'small_image'), null, true) ?>" style="display:none"></a>
+                            </div>
+                            <?php 
+                            }?>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="info-inner">
+                            <div class="item-title"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a></div>
+                            <div class="item-content clearfix">
+                                <div class="item-price">
+                                <?php echo $this->getPriceHtml($_item, true, '-related') ?>
+                                </div>
+                                <?php //echo $this->getReviewsSummaryHtml($_item, false, true) ?>
+                                <?php
+                                $number_buttom = 0;
+                                if($themeConfig['displayWishlist']==1) $number_buttom = $number_buttom +1;
+                                if($themeConfig['displayCompare']==1) $number_buttom = $number_buttom +1;
+                                if($number_buttom > 0 || $themeConfig['displayAddtocart']==1){ ?>
+                                <div class="actions<?php echo ($number_buttom > 0)?' more-buttons':''?>">
+                                <?php
+                                if($themeConfig['displayAddtocart']==1){?>
+                                    <?php if($_item->isSaleable()): ?>
+                                        <button title="<?php echo $this->__('Add to Cart') ?>" class="btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')"><?php echo $this->__('Add to Cart') ?></button>
+                                    <?php else: ?>
+                                        <span class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></span>
+                                    <?php endif; ?>
+                                <?php
+                                }?>
+                                <?php if($number_buttom > 0){?>
+                                <ul class="add-to-links">
+                                    <?php if ( $this->helper('wishlist')->isAllow() && $themeConfig['displayWishlist']==1 ) : ?>
+                                        <li><a title="<?php echo $this->__('Add to Wishlist') ?>" href="<?php echo $this->helper('wishlist')->getAddUrl($_item) ?>" class="link-wishlist" data-toggle="tooltip" data-original-title="<?php echo $this->__('Add to Wishlist') ?>"><?php //echo $this->__('Add to Wishlist') ?></a></li>
+                                    <?php endif; ?>
+                                    <?php if( $themeConfig['displayCompare']==1 ):
+                                    $_compareUrl=$this->getAddToCompareUrl($_item);
+                                    ?>
+                                        <li><a title="<?php echo $this->__('Add to Compare') ?>" href="<?php echo $_compareUrl ?>" class="link-compare" data-toggle="tooltip" data-original-title="<?php echo $this->__('Add to Compare') ?>"><?php //echo $this->__('Add to Compare') ?></a></li>
+                                    <?php endif; ?>
+                                </ul>
+                                <?php } ?>
+                                </div>
+                                <?php
+                                } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+    <?php endforeach; ?>
+    </ul>
+    <script type="text/javascript">decorateList('crosssell-products-list', 'none-recursive')</script>
+</div>
+<?php endif; ?>

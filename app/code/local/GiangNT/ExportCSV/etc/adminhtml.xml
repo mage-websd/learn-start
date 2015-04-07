@@ -1,0 +1,31 @@
+<config>
+    <menu>
+        <giangnt translate="title" module="giangnt_exportcsv">
+            <title>GiangNT</title>
+            <sort_order>999</sort_order>
+            <children>
+                <exportcsv translate="title" module="giangnt_exportcsv">
+                    <title>Export CSV</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/exportcsv/index</action>
+                </exportcsv>
+            </children>
+        </giangnt>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <giangnt translate="title" module="giangnt_exportcsv">
+                        <title>GiangNT</title>
+                        <children>
+                            <exportcsv translate="title" module="giangnt_exportcsv">
+                                <title>Export CSV</title>
+                            </exportcsv>
+                        </children>
+                    </giangnt>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

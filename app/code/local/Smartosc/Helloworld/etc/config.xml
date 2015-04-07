@@ -36,19 +36,19 @@
             </helloworld>
         </helpers>
 
-        <resources>
+        <!--<resources>
             <smartosc_helloworld_setupthr>
                 <setup>
                     <module>Smartosc_Helloworld</module>
                     <class>Smartosc_Helloworld_Model_Resource_Setup_Newtable</class>
                 </setup>
-                <!--                <connection>
+                &lt;!&ndash;                <connection>
                     <use>core_setup</use>
-                </connection>-->
+                </connection>&ndash;&gt;
             </smartosc_helloworld_setupthr>
 
 
-            <!--            <helloworld_write>
+            &lt;!&ndash;            <helloworld_write>
                 <connection>
                     <use>core_write</use>
                 </connection>
@@ -58,8 +58,8 @@
                 <connection>
                     <use>core_read</use>
                 </connection>
-            </helloworld_read>-->
-        </resources>
+            </helloworld_read>&ndash;&gt;
+        </resources>-->
     </global>
 
     <frontend>        

@@ -1,0 +1,22 @@
+<layout>
+    <adminhtml_exportcsv_index>
+        <reference name="head">
+            <action method="addItem">
+                <type>js_css</type>
+                <name>calendar/calendar-win2k-1.css</name>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>calendar/calendar.js</name>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>calendar/calendar-setup.js</name>
+            </action>
+            <block type="core/html_calendar" name="head.calendar" as="calendar" template="page/js/calendar.phtml"/>
+        </reference>
+        <reference name="content">
+            <block name="export.csv" type="core/template" template="giangnt/export.phtml"/>
+        </reference>
+    </adminhtml_exportcsv_index>
+</layout>

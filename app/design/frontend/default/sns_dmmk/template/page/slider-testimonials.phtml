@@ -1,0 +1,73 @@
+<div class="block block-testimonials span12">
+    <div class="block-title">What client say</div>
+    <div class="block-content">
+        <div id="sns_quotenav">
+            <div class="sns-quotenav"></div>
+        </div>
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('position-3')->toHtml() ?>
+    </div>
+</div>
+<?php
+if (null == Mage::registry('sns.jquery')){
+    Mage::register('sns.jquery', 1);
+    return 'sns/slider/js/jquery-1.7.2.min.js';
+}
+if (null == Mage::registry('sns.jquerynoconflict')){
+    Mage::register('sns.jquerynoconflict', 1);
+    return 'sns/slider/js/sns.noconflict.js';
+}
+if (null == Mage::registry('sns.caroufredsel')){
+    Mage::register('sns.caroufredsel', 1); ?>
+    <script type="text/javascript" src="<?php echo $this->getSkinUrl('assets/plg_caroufredsel/jquery.carouFredSel-6.2.1-packed.js') ?>"></script>
+<?php
+}
+if (null == Mage::registry('sns.mousewheel')){
+    Mage::register('sns.mousewheel', 1); ?>
+    <script type="text/javascript" src="<?php echo $this->getSkinUrl('assets/plg_caroufredsel/jquery.mousewheel.min.js') ?>"></script>
+<?php
+}
+if (null == Mage::registry('sns.touchswipe')){
+    Mage::register('sns.touchswipe', 1); ?>
+    <script type="text/javascript" src="<?php echo $this->getSkinUrl('assets/plg_caroufredsel/jquery.touchSwipe.min.js') ?>"></script>
+<?php
+}
+if (null == Mage::registry('sns.transit')){
+    Mage::register('sns.transit', 1); ?>
+    <script type="text/javascript" src="<?php echo $this->getSkinUrl('assets/plg_caroufredsel/jquery.transit.min.js') ?>"></script>
+<?php
+} ?>
+<script type="text/javascript">
+//<![CDATA[
+    $sns_jq(document).ready(function($){
+        htmlNav = '<ul class="quote-nav">'; i=0;
+        $('.list-quotes .item').each(function(){
+            i++;
+            if(i==1){
+                $(this).addClass('active');
+            }
+            $(this).addClass('item'+i);
+            htmlNav = htmlNav + '<li class="item" data-href="item'+i+'">'+i+'</li>';
+        });
+        htmlNav = htmlNav + '</ul>';
+        $('#sns_quotenav .sns-quotenav').html(htmlNav);
+        j=0;
+        $('#sns_quotenav ul .item').each(function(){
+            j++;
+            if(j==1){
+                $(this).addClass('active');
+            }
+            $(this).click(function(){
+                $('.list-quotes .item').removeClass('active');
+                $('.list-quotes').find("."+$(this).attr('data-href')).addClass('active');
+                $('#sns_quotenav ul .item').removeClass('active');
+                $(this).addClass('active');
+            })
+        });
+
+        $('.list-quotes').css('height', $('.list-quotes .item.active').outerHeight());
+        $(window).resize(function(){
+            $('.list-quotes').css('height', $('.list-quotes .item.active').outerHeight());
+        });
+    });
+//]]>
+</script>

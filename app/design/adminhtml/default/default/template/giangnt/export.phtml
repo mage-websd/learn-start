@@ -1,0 +1,60 @@
+<div class="content-header">
+    <table cellspacing="0" class="grid-header">
+        <tr>
+            <td><h3><?php echo $this->__('Export order csv file'); ?></h3></td>
+            <td class="a-right">
+                <button onclick="editForm.submit()" class="scalable save" type="button"><span>Export</span></button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="entry-edit">
+    <form id="edit_form" name="edit_form" method="post" action="<?php echo $this->getUrl('*/*/post'); ?>">
+        <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+        <h4 class="icon-head head-edit-form fieldset-legend"><?=$this->__('This fieldset name')?></h4>
+        <fieldset id="my-fieldset">
+            <table cellspacing="0" class="form-list">
+                <tr>
+                    <td class="label">
+                        <?php echo $this->__('From Date');?>
+                        <span class="required">*</span>
+                    </td>
+                    <td class="input-element">
+                        <img title="Select date" id="from_date_trig" src="<?php echo $this->getSkinUrl();?>images/grid-cal.gif" class="v-middle">
+                        <input class="input-text required-entry" name="from_date" type="text" id="from_date"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">
+                        <?php echo $this->__('To Date');?>
+                        <span class="required">*</span>
+                    </td>
+                    <td class="input-element">
+                        <img title="Select date" id="to_date_trig" src="<?php echo $this->getSkinUrl();?>images/grid-cal.gif" class="v-middle">
+                        <input class="input-text required-entry" name="to_date" type="text" id="to_date"/>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</div>
+<script type="text/javascript">
+    //<![CDATA[
+    var editForm = new varienForm('edit_form');
+
+    Calendar.setup({
+        inputField : 'from_date',
+        ifFormat : '%Y-%m-%e',
+        button : 'from_date_trig',
+        align : 'Bl',
+        singleClick : true
+    });
+    Calendar.setup({
+        inputField : 'to_date',
+        ifFormat : '%Y-%m-%e',
+        button : 'to_date_trig',
+        align : 'Bl',
+        singleClick : true
+    });
+    //]]>
+</script>
