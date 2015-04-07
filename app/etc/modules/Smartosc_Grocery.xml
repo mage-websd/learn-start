@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Smartosc_Grocery>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
         </Smartosc_Grocery>
     </modules>

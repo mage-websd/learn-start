@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Sosc_Featuredproduct>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
         </Sosc_Featuredproduct>
     </modules>

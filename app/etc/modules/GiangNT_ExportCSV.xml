@@ -4,6 +4,6 @@
         <GiangNT_ExportCSV>
             <active>true</active>
             <codePool>local</codePool>
-                    </GiangNT_ExportCSV>
+        </GiangNT_ExportCSV>
     </modules>
 </config>
