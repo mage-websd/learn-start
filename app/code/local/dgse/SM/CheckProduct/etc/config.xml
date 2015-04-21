@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_CheckProduct>
+            <version>0.1.0</version>
+        </SM_CheckProduct>
+    </modules>
+    <frontend>
+        <events>
+            <sales_order_save_after>
+                <observers>
+                    <sm_product_deactivateonoutofstock>
+                        <type>singleton</type>
+                        <class>SM_CheckProduct_Model_Observer</class>
+                        <method>salesOrderSaveAfter</method>
+                    </sm_product_deactivateonoutofstock>
+                </observers>
+            </sales_order_save_after>
+        </events>
+    </frontend>
+</config>

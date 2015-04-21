@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Invoice>
+            <version>0.1.2</version>
+        </SM_Invoice>
+    </modules>
+    <global>
+        <models>
+            <sm_invoice>
+                <class>SM_Invoice_Model</class>
+            </sm_invoice>
+            <sales>
+                <rewrite>
+                    <order_invoice>SM_Invoice_Model_Sales_Order_Invoice</order_invoice>
+                </rewrite>
+            </sales>
+        </models>
+        <resources>
+            <sm_invoice_setup>
+                <setup>
+                    <module>SM_Invoice</module>
+                </setup>
+            </sm_invoice_setup>
+        </resources>
+    </global>
+</config>

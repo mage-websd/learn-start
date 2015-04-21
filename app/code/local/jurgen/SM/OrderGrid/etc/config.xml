@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_OrderGrid>
+            <version>0.1.0</version>
+        </SM_OrderGrid>
+    </modules>
+    
+	<admin>
+        <routers>
+            <sm_ordergrid>
+                <use>admin</use>
+                <args>
+                    <module>SM_OrderGrid</module>
+                    <frontName>ordergrid</frontName>
+                </args>
+            </sm_ordergrid>
+        </routers>
+    </admin>
+    
+    <global>
+    	<models>
+	    	<sales>
+	    		<rewrite>
+	    			<order>SM_OrderGrid_Model_Sales_Order</order>
+	    		</rewrite>
+	    	</sales>
+    	</models>
+
+		<!-- Override controller -->
+		<rewrite>
+                    <sm_ordergrid_adminhtml_sales_order> <!-- Not important -->
+                        <from><![CDATA[#^/admin/sales_order/#]]></from>
+                        <to>/ordergrid/adminhtml_sales_order/</to>
+                    </sm_ordergrid_adminhtml_sales_order>
+                    
+                    <sm_ordergrid_adminhtml_sales_invoice> <!-- Not important -->
+                        <from><![CDATA[#^/admin/sales_order_invoice/print/#]]></from>
+                        <to>/ordergrid/adminhtml_sales_invoice/print/</to>
+                    </sm_ordergrid_adminhtml_sales_invoice>
+                    
+                    <!-- <sm_ordergrid_adminhtml_sales_invoices> 
+                        <from><![CDATA[#^/admin/sales_invoice/#]]></from>
+                        <to>/ordergrid/adminhtml_sales_invoices/</to>
+                    </sm_ordergrid_adminhtml_sales_invoices> -->
+		</rewrite>
+        <!-- Override controller END -->
+        
+        <sales>
+            <order>
+                <statuses>
+                    <!-- add new packaging status -->
+                    <packaging translate="label"><label>Packaging</label></packaging>
+                </statuses>
+				
+                <states>
+                    <!-- ADD: add new packaging status -->
+                    <packaging translate="label">
+                        <label>Packaging</label>
+                        <statuses>
+                            <packaging default="1"/>
+                        </statuses>
+                        <visible_on_front/>
+                    </packaging>
+                    <!-- END -->
+                </states>
+            </order>
+		</sales>
+    </global>
+</config>

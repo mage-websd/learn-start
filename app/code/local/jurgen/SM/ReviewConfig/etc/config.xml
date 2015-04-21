@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_ReviewConfig>
+            <version>0.1.0</version>
+        </SM_ReviewConfig>
+    </modules>
+    <frontend>
+        <routers>
+            <sm_reviewconfig>
+                <use>standard</use>
+                <args>
+                    <module>SM_ReviewConfig</module>
+                    <frontName>reviewsconfig</frontName>
+                </args>
+            </sm_reviewconfig>
+        </routers>
+    </frontend>
+</config>

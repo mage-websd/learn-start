@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_CheckMoneyOrder>
+            <version>0.1.0</version>
+        </SM_CheckMoneyOrder>
+    </modules>
+</config>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Autocomplete>
+            <version>0.1.0</version>
+        </SM_Autocomplete>
+    </modules>
+    <global>
+        <helpers>
+            <sm_autocomplete>
+                <class>SM_Autocomplete_Helper</class>
+            </sm_autocomplete>
+        </helpers>
+    </global>
+    <frontend>
+        <routers>
+            <sm_search_blog_autocomplete>
+                <use>standard</use>
+                <args>
+                    <module>SM_Autocomplete</module>
+                    <frontName>search_blog</frontName>
+                </args>
+            </sm_search_blog_autocomplete>
+        </routers>
+        <layout>
+            <updates>
+                <SM_Autocomplete>
+                    <file>sm_search_autocomplete.xml</file>
+                </SM_Autocomplete>
+            </updates>
+        </layout>
+    </frontend>
+</config>
+

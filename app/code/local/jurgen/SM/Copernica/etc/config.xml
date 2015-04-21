@@ -1,0 +1,17 @@
+<?xml version='1.0' ?>
+<config>
+    <modules>
+        <SM_Copernica>
+            <version>0.1.2</version>
+        </SM_Copernica>
+    </modules>
+    <global>
+        <resources>
+            <sm_copernica_setup>
+                <setup>
+                    <module>SM_Copernica</module>
+                </setup>
+            </sm_copernica_setup>
+        </resources>
+    </global>
+</config>

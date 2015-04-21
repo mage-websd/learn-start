@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <SM_ProductUnder>
+            <version>0.1.0</version>
+        </SM_ProductUnder>
+    </modules>
+    <frontend>
+        <routers>
+            <sm_product_under>
+                <use>standard</use>
+                <args>
+                    <module>SM_ProductUnder</module>
+                    <frontName>under500</frontName>
+                </args>
+            </sm_product_under>
+        </routers>
+        <layout>
+            <updates>
+                <sm_product_under>
+                    <file>sm/productunder/productunder.xml</file>
+                </sm_product_under>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <blocks>
+            <sm_product_under>
+                <class>SM_ProductUnder_Block</class>
+            </sm_product_under>
+        </blocks>
+    </global>
+</config>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_CreateStaticBlock>
+            <version>0.1.0</version>
+        </SM_CreateStaticBlock>
+    </modules>
+    <global>
+        <models>
+            <sm_createstaticblock>
+                <class>SM_CreateStaticBlock_Model</class>
+            </sm_createstaticblock>
+        </models>
+        <blocks>
+            <sm_createstaticblock>
+                <class>SM_CreateStaticBlock_Block</class>
+            </sm_createstaticblock>
+        </blocks>
+        <helpers>
+            <sm_createstaticblock>
+                <class>SM_CreateStaticBlock_Helper</class>
+            </sm_createstaticblock>
+        </helpers>
+        <resources>
+            <sm_createstaticblock_setup>
+                <setup>
+                    <module>SM_CreateStaticBlock</module>
+                </setup>
+            </sm_createstaticblock_setup>
+        </resources>
+    </global>
+</config>

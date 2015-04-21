@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <templates_master translate="label" module="xordernumber">
+            <label>Smart Extension</label>
+            <sort_order>200</sort_order>
+        </templates_master>
+    </tabs>
+    <sections>
+        <sm_xordernumber translate="label" module="xordernumber">
+            <label>Sale/Order Number Contants</label>
+            <tab>templates_master</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>Sale/Order Number Contants</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <store_prefix translate="label">
+                            <label>Store prefix</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </store_prefix>
+                    </fields>
+                </general>
+            </groups>
+        </sm_xordernumber>
+    </sections>
+</config>

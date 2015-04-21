@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_OverideCore>
+            <version>0.1.0</version>
+        </SM_OverideCore>
+    </modules>
+    <global>
+        <models>
+            <sm_overidecore>
+                <class>SM_OverideCore_Model</class>
+            </sm_overidecore>
+
+            <!--
+                sales
+            -->
+            <sales>
+                <rewrite>
+                    <order_pdf_invoice>SM_OverideCore_Model_Sales_Order_Pdf_Invoice</order_pdf_invoice>
+                </rewrite>
+            </sales>
+        </models>
+        <blocks>
+            <sm_overidecore>
+                <class>SM_OverideCore_Block</class>
+            </sm_overidecore>
+
+            <!--
+                catalog
+            -->
+            <catalog>
+                <rewrite>
+                    <product_view>SM_OverideCore_Block_Catalog_Product_View</product_view>
+                </rewrite>
+            </catalog>
+            <catalog>
+                <rewrite>
+                    <breadcrumbs>SM_OverideCore_Block_Catalog_Breadcrumbs</breadcrumbs>
+                </rewrite>
+            </catalog>
+            <catalog>
+                <rewrite>
+                    <navigation>SM_OverideCore_Block_Catalog_Navigation</navigation>
+                </rewrite>
+            </catalog>
+        </blocks>
+        <helpers>
+            <sm_overidecore>
+                <class>SM_OverideCore_Helper</class>
+            </sm_overidecore>
+        </helpers>
+    </global>
+</config>

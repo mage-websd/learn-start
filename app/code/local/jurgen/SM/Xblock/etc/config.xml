@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Xblock>
+            <version>1.0.14</version>
+        </SM_Xblock>
+    </modules>
+
+    <frontend>
+        <routers>
+            <xblock>
+                <use>standard</use>
+                <args>
+                    <module>SM_Xblock</module>
+                    <frontName>xblock</frontName>
+                </args>
+            </xblock>
+        </routers>
+        <layout>
+            <updates>
+                <xblock>
+                    <file>sm_xblock.xml</file>
+                </xblock>
+            </updates>
+        </layout>
+    </frontend>
+
+    <admin>
+        <routers>
+            <xblock_admin>
+                <use>admin</use>
+                <args>
+                    <module>SM_Xblock</module>
+                    <frontName>xblock_admin</frontName>
+                </args>
+            </xblock_admin>
+        </routers>
+    </admin>
+
+    <adminhtml>
+
+        <menu>
+            <xblock module="xblock">
+                <title>SmartOSC X-Block</title>
+                <sort_order>71</sort_order>
+                <children>
+                    <new module="xblock">
+                        <title>Add X-Block</title>
+                        <sort_order>0</sort_order>
+                        <action>xblock_admin/manage_xblock/new</action>
+                    </new>
+                    <index module="xblock">
+                        <title>Manage X-Block</title>
+                        <sort_order>10</sort_order>
+                        <action>xblock_admin/manage_xblock/index</action>
+                    </index>
+                </children>
+            </xblock>
+        </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <xblock>
+                            <title>SmartOSC X-Block</title>
+                            <sort_order>70</sort_order>
+                            <children>
+                                <index>
+                                    <title>Manage X-Block</title>
+                                    <sort_order>0</sort_order>
+                                </index>
+                                <new>
+                                    <title>Add X-Block</title>
+                                    <sort_order>1</sort_order>
+                                </new>
+                            </children>
+                        </xblock>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <xblock>
+                                            <title>aheadWorks Blog Section</title>
+                                        </xblock>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <xblock>
+                    <file>sm_xblock.xml</file>
+                </xblock>
+            </updates>
+        </layout>
+    </adminhtml>
+    <global>
+        <models>
+            <xblock>
+                <class>SM_Xblock_Model</class>
+                <resourceModel>xblock_mysql4</resourceModel>
+            </xblock>
+            <xblock_mysql4>
+                <class>SM_Xblock_Model_Mysql4</class>
+                <entities>
+                    <xblock>
+                        <table>sm_xblock</table>
+                    </xblock>
+                    <store>
+                        <table>sm_xblock_store</table>
+                    </store>
+                    <category>
+                        <table>sm_xblock_category</table>
+                    </category>
+                    <schedule>
+                        <table>sm_xblock_schedule</table>
+                    </schedule>
+                    <item>
+                        <table>sm_xblock_item</table>
+                    </item>
+                </entities>
+            </xblock_mysql4>
+        </models>
+        <resources>
+            <xblock_setup>
+                <setup>
+                    <module>SM_Xblock</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </xblock_setup>
+            <xblock_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </xblock_write>
+            <xblock_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </xblock_read>
+        </resources>
+        <blocks>
+            <xblock>
+                <class>SM_Xblock_Block</class>
+            </xblock>
+        </blocks>
+        <helpers>
+            <xblock>
+                <class>SM_Xblock_Helper</class>
+            </xblock>
+        </helpers>
+    </global>
+</config>

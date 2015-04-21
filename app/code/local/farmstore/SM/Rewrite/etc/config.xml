@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Rewrite>
+            <version>1.0.0</version>
+        </SM_Rewrite>
+    </modules>
+    <global>
+        <blocks>
+            <checkout>
+                <rewrite>
+                    <onepage_shipping>SM_Rewrite_Block_Onepage_Shipping</onepage_shipping>
+                </rewrite>
+            </checkout>
+        </blocks>
+        <models>
+            <sm_rewrite>
+                <class>SM_Rewrite_Model</class>
+            </sm_rewrite>
+
+            <api>
+                <rewrite>
+                    <server_v2_adapter_soap>SM_Rewrite_Model_Api_Server_V2_Adapter_Soap</server_v2_adapter_soap>
+                </rewrite>
+            </api>
+
+            <reports_resource>
+                <rewrite>
+                    <order_collection>SM_Rewrite_Model_Dashboard_Report</order_collection>
+                </rewrite>
+            </reports_resource>
+
+        </models>
+    </global>
+</config>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_CatalogSearch>
+            <version>0.1.0</version>
+        </SM_CatalogSearch>
+    </modules>
+    <global>
+        <blocks>
+            <catalogsearch>
+                <rewrite>
+                    <result>SM_CatalogSearch_Block_Result</result>
+                </rewrite>
+            </catalogsearch>
+            <sm_catalogsearch>
+                <class>SM_CatalogSearch_Block</class>
+            </sm_catalogsearch>
+        </blocks>
+    </global>
+</config>

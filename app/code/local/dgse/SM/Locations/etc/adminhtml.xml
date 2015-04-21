@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <sm_locations_location>
+                    <title>Manage Locations</title>
+                    <action>adminhtml/locations</action>
+                </sm_locations_location>
+            </children>
+        </catalog>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <catalog>
+                        <sm_locations_location>
+                            <title>Manage Locations</title>
+                        </sm_locations_location>
+                    </catalog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

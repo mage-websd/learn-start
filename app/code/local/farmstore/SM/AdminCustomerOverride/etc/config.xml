@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_AdminCustomerOverride>
+            <version>0.1.0</version>
+        </SM_AdminCustomerOverride>
+    </modules>
+    <global>
+        <blocks>
+            <sm_admincustomeroverride>
+                <class>SM_AdminCustomerOverride_Block</class>
+            </sm_admincustomeroverride>
+            <adminhtml>
+                <rewrite>
+                    <customer_edit_tab_cart>SM_AdminCustomerOverride_Block_Customercart</customer_edit_tab_cart>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+    </global>
+</config>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Rewrite>
+            <version>0.1.0</version>
+        </SM_Rewrite>
+    </modules>
+    <global>
+        <models>
+            <sm_rewrite>
+                <class>SM_Rewrite_Model</class>
+            </sm_rewrite>
+            <core>
+                <rewrite>
+                    <email_template>SM_Rewrite_Model_Email_Template</email_template>
+                </rewrite>
+            </core>
+        </models>
+    </global>
+</config>

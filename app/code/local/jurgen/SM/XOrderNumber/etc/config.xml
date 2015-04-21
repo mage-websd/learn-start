@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+      <modules>
+            <SM_XOrderNumber>
+                  <version>0.1.0</version>
+            </SM_XOrderNumber>
+      </modules>
+    <frontend>
+        <routers>
+            <xordernumber>
+                <use>standard</use>
+                <args>
+                    <module>SM_XOrderNumber</module>
+                    <frontName>xordernumber</frontName>
+                </args>
+            </xordernumber>
+        </routers>
+    </frontend>
+      <global>
+            <models>
+              <xordernumber>
+                    <class>SM_XOrderNumber_Model</class>
+              </xordernumber>
+              <eav>
+                  <rewrite>
+                        <entity_increment_numeric>SM_XOrderNumber_Model_Numeric</entity_increment_numeric>
+                  </rewrite>
+              </eav>
+            </models>
+            <helpers>
+                <xordernumber>
+                    <class>SM_XOrderNumber_Helper</class>
+                </xordernumber>
+            </helpers>
+      </global>
+	  
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <sm_xordernumber translate="title" module="xordernumber">
+                                            <title>Sale/Order Number Contants</title>
+                                            <sort_order>50</sort_order>
+                                        </sm_xordernumber>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>	  
+	  
+</config>

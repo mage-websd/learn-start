@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<adminhtml>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <wordpress>
+                                        <children>
+                                            <rss>
+                                                <title>Rss</title>
+                                                <sort>100</sort>
+                                            </rss>
+                                        </children>
+                                    </wordpress>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</adminhtml>

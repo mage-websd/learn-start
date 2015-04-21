@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Compare>
+            <version>0.1.0</version>
+        </SM_Compare>
+    </modules>
+    <global>
+        <models>
+            <sm_compare>
+                <class>SM_Compare_Model</class>
+            </sm_compare>
+        </models>
+    </global>
+    <frontend>
+        <routers>
+            <catalog>
+                <args>
+                    <modules>
+                        <sm_compare before="Mage_Catalog">SM_Compare</sm_compare>
+                    </modules>
+                </args>
+            </catalog>
+        </routers>
+        <layout>
+            <updates>
+                <sm_compare>
+                    <file>sm_compare.xml</file>
+                </sm_compare>
+            </updates>
+        </layout>
+    </frontend>
+</config>

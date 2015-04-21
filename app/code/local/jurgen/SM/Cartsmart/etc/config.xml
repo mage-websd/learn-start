@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Cartsmart>
+            <version>0.1.0</version>
+        </SM_Cartsmart>
+    </modules>
+    <frontend>
+        <routers>
+            <cartsmart>
+                <args>
+                    <modules>
+                        <SM_Cartsmart before="Mage_Checkout">SM_Cartsmart</SM_Cartsmart>
+                    </modules>
+                  </args>
+            </cartsmart>
+        </routers>
+    </frontend>
+</config>

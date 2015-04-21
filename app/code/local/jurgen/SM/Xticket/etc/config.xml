@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Xticket>
+            <version>0.6.0</version>
+
+        </SM_Xticket>
+    </modules>
+    <frontend>
+        <routers>
+            <xticket>
+                <use>standard</use>
+                <args>
+                    <module>SM_Xticket</module>
+                    <frontName>xticket</frontName>
+                </args>
+            </xticket>
+        </routers>
+        <translate>
+            <modules>
+                <SM_Xticket>
+                    <files>
+                        <default>SM_Xticket.csv</default>
+                    </files>
+                </SM_Xticket>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <xticket>
+                    <file>xticket.xml</file>
+                </xticket>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <xticket>
+                <use>admin</use>
+                <args>
+                    <module>SM_Xticket</module>
+                    <frontName>xticket</frontName>
+                </args>
+            </xticket>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <xticket translate="title" module="xticket">
+                <title>XTicket</title>
+                <sort_order>71</sort_order>
+                <children>
+                    <ticket translate="title" module="xticket">
+                        <title>View Tickets</title>
+                        <sort_order>0</sort_order>
+                        <action>xticket/adminhtml_xticket</action>
+                    </ticket>
+                    <!--<mail translate="title" module="xticket">
+                                                <title>Mail Responses</title>
+                                                <sort_order>1</sort_order>
+                                                <action>xticket/adminhtml_mail</action>
+                                        </mail>-->
+                    <cat translate="title" module="xticket">
+                        <title>Manage Departments</title>
+                        <sort_order>2</sort_order>
+                        <action>xticket/adminhtml_cat</action>
+                    </cat>
+                    <!--<rep translate="title" module="xticket">
+                                                <title>Representatives</title>
+                                                <sort_order>3</sort_order>
+                                                <action>xticket/adminhtml_rep</action>
+                                        </rep>
+                                        <setting translate="title" module="xticket">
+                                                <title>Settings</title>
+                                                <sort_order>4</sort_order>
+                                                <action>xticket/adminhtml_setting</action>
+                                        </setting>-->
+                    <template translate="title" module="xticket">
+                        <title>Departments Templates</title>
+                        <sort_order>5</sort_order>
+                        <action>xticket/adminhtml_template</action>
+                    </template>
+                    <department_static translate="title" module="xticket">
+                        <title>Settings</title>
+                        <sort_order>6</sort_order>
+                        <action>adminhtml/system_config/edit/section/xticket</action>
+                    </department_static>
+                </children>
+            </xticket>
+        </menu>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <xticket>
+                            <title>XTicket</title>
+                            <sort_order>30</sort_order>
+                            <children>
+                                <ticket translate="title">
+                                    <title>View Tickets</title>
+                                </ticket>
+                                <mail translate="title">
+                                    <title>Mail Responses</title>
+                                </mail>
+                                <cat translate="title">
+                                    <title>Departments</title>
+                                </cat>
+                                <rep translate="title">
+                                    <title>Representatives</title>
+                                </rep>
+                                <setting translate="title">
+                                    <title>Settings</title>
+                                </setting>
+                                <template translate="title">
+                                    <title>Departments Templates</title>
+                                </template>
+                                <department_static translate="title">
+                                    <title>Departments Statics</title>
+                                </department_static>
+                            </children>
+                        </xticket>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <xticket translate="title" module="xticket">
+                                            <title>Smart Extension</title>
+                                            <sort_order>50</sort_order>
+                                        </xticket>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+            <modules>
+                <SM_Xticket>
+                    <files>
+                        <default>SM_Xticket.csv</default>
+                    </files>
+                </SM_Xticket>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <xticket>
+                    <file>xticket.xml</file>
+                </xticket>
+            </updates>
+        </layout>
+    </adminhtml>
+    <global>
+        <models>
+            <xticket>
+                <class>SM_Xticket_Model</class>
+                <resourceModel>xticket_mysql4</resourceModel>
+            </xticket>
+            <xticket_mysql4>
+                <class>SM_Xticket_Model_Mysql4</class>
+                <entities>
+                    <xticket>
+                        <table>sm_ticket_tickets</table>
+                    </xticket>
+                    <mail>
+                        <table>sm_ticket_settings</table>
+                    </mail>
+                    <reps>
+                        <table>sm_ticket_reps</table>
+                    </reps>
+                    <cats>
+                        <table>sm_ticket_categories</table>
+                    </cats>
+                    <messages>
+                        <table>sm_ticket_messages</table>
+                    </messages>
+                    <answers>
+                        <table>sm_ticket_answers</table>
+                    </answers>
+                    <privmsg>
+                        <table>sm_ticket_privmsg</table>
+                    </privmsg>
+                    <groups>
+                        <table>sm_ticket_groups</table>
+                    </groups>
+                    <settings>
+                        <table>sm_ticket_settings</table>
+                    </settings>
+                    <templates>
+                        <table>sm_ticket_templates</table>
+                    </templates>
+                    <attachments>
+                        <table>sm_ticket_attachments</table>
+                    </attachments>
+                    <templates_store>
+                        <table>sm_ticket_templates_store</table>
+                    </templates_store>
+                    <categories_store>
+                        <table>sm_ticket_categories_store</table>
+                    </categories_store>
+                    <tickets_store>
+                        <table>sm_ticket_tickets_store</table>
+                    </tickets_store>
+                </entities>
+            </xticket_mysql4>
+            <customer_entity>
+                <rewrite>
+                    <customer_collection>SM_Xticket_Model_Entity_Customer_Collection</customer_collection>
+                </rewrite>
+            </customer_entity>
+        </models>
+        <resources>
+            <xticket_setup>
+                <setup>
+                    <module>SM_Xticket</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </xticket_setup>
+            <xticket_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </xticket_write>
+            <xticket_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </xticket_read>
+        </resources>
+
+        <blocks>
+            <customer>
+                <rewrite>
+                    <account_navigation>SM_Xticket_Block_Xticket_Navigation</account_navigation>
+                    <xticket_view>SM_Xticket_Block_Xticket_View</xticket_view>
+                    <xticket_edit>SM_Xticket_Block_Xticket_Edit</xticket_edit>
+                </rewrite>
+            </customer>
+            <xticket>
+                <class>SM_Xticket_Block</class>
+            </xticket>
+        </blocks>
+
+        <helpers>
+            <xticket>
+                <class>SM_Xticket_Helper</class>
+            </xticket>
+        </helpers>
+    </global>
+
+    <default>
+        <xticket>
+            <!--<imap>
+                                <email_address ></email_address>
+                                <server_address></server_address>
+                                <type>1</type>
+                                <port>110</port>
+                                <username></username>
+                                <password></password>
+                                <ssl>0</ssl>
+                                <auto_deps>1</auto_deps>
+                        </imap>-->
+            <generaldep>
+                <name>General support department</name>
+                <contact></contact>
+                <sender></sender>
+                <notify>1</notify>
+                <reassign_email></reassign_email>
+                <new_email></new_email>
+                <reply_email></reply_email>
+                <customer_new_email></customer_new_email>
+                <new_from_admin_to_customer></new_from_admin_to_customer>
+                <to_customer_reply_email></to_customer_reply_email>
+            </generaldep>
+            <advanced>
+                <visible_deps>1</visible_deps>
+                <maxupload>2</maxupload>
+                <pathupload>media/upload_helpdesk/</pathupload>
+                <recordnumber>50</recordnumber>
+                <ticketexpire>5</ticketexpire>
+                <allownew>1</allownew>
+                <allowexternal>1</allowexternal>
+                <orders_enabled>1</orders_enabled>
+            </advanced>
+            <modules>
+                <pq_enabled>1</pq_enabled>
+                <cf_enabled>1</cf_enabled>
+                <cf_disable_email>1</cf_disable_email>
+            </modules>
+        </xticket>
+    </default>
+
+    <crontab>
+        <jobs>
+            <xticket_run_all>
+                <schedule><cron_expr>*/5 * * * *</cron_expr></schedule>
+                <run><model>xticket/observer::runScheduledXticket</model></run>
+            </xticket_run_all>
+        </jobs>
+    </crontab>
+</config>

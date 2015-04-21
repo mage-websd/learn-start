@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_FPCheckEmail>
+            <version>0.1.0</version>
+        </SM_FPCheckEmail>
+    </modules>
+    <frontend>
+        <routers>
+            <customer>
+                <args>
+                    <modules>
+                        <sm_fpcheckemail before="Mage_Customer">SM_FPCheckEmail</sm_fpcheckemail>
+                    </modules>
+                </args>
+            </customer>
+        </routers>
+    </frontend>
+</config>

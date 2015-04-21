@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_FixOrder>
+            <version>0.1.0</version>
+        </SM_FixOrder>
+    </modules>
+    <global>
+        <resources>
+            <sm_fixorder_setup>
+                <setup>
+                    <module>SM_FixOrder</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+            </sm_fixorder_setup>
+        </resources>
+    </global>
+</config>

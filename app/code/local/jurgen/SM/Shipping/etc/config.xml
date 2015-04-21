@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Shipping>
+            <version>0.0.2</version>
+        </SM_Shipping>
+    </modules>
+    <frontend>
+        <events>
+            <sales_quote_collect_totals_before>
+                <observers>
+                    <frontend_shipping_rates_sales_quote_collect_totals_before>
+                        <class>SM_Shipping_Model_Observer</class>
+                        <method>hideShippingMethods</method>
+                    </frontend_shipping_rates_sales_quote_collect_totals_before>
+                </observers>
+            </sales_quote_collect_totals_before>
+        </events>
+    </frontend>
+    <global>
+        <models>
+            <sm_shipping>
+                <class>SM_Shipping_Model</class>
+            </sm_shipping>
+        </models>
+        <helpers>
+            <sm_shipping>
+                <class>SM_Shipping_Helper</class>
+            </sm_shipping>
+        </helpers>
+    </global>
+    <default>
+        <carriers>
+            <sm_shipping>
+                <active>1</active>
+                <sort_order>10</sort_order>
+                <model>sm_shipping/carrier</model>
+                <title>Wholesale Shipping Carrier</title>
+                <sort_order>10</sort_order>
+                <sallowspecific>1</sallowspecific>
+            </sm_shipping>
+        </carriers>
+    </default>
+</config>

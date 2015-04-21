@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Featured>
+            <version>0.1.0</version>
+        </SM_Featured>
+    </modules>
+    <global>
+        <blocks>
+            <sm_featured>
+                <class>SM_Featured_Block</class>
+            </sm_featured>
+        </blocks>
+    </global>
+    <frontend>
+        <routers>
+            <sm_featured>
+                <use>standard</use>
+                <args>
+                    <module>SM_Featured</module>
+                    <frontName>featured</frontName>
+                </args>
+            </sm_featured>
+        </routers>
+        <layout>
+            <updates>
+                <sm_featured>
+                    <file>featured.xml</file>
+                </sm_featured>
+            </updates>
+        </layout>
+    </frontend>
+</config>

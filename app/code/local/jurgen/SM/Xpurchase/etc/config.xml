@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Xpurchase>
+            <version>0.1.0</version>
+        </SM_Xpurchase>
+    </modules>
+
+    <frontend>
+        <routers>
+            <admin>
+                <use>standard</use>
+                <args>
+                    <module>SM_Xpurchase</module>
+                    <frontName>admin</frontName>
+                </args>
+            </admin>
+        </routers>
+    </frontend>
+
+    <admin>
+        <routers>
+            <xpurchase_admin>
+                <use>admin</use>
+                <args>
+                    <module>SM_Xpurchase</module>
+                    <frontName>xpurchase_admin</frontName>
+                </args>
+            </xpurchase_admin>
+        </routers>
+    </admin>
+
+    <global>
+        <blocks>
+            <xpurchase>
+                <rewrite>
+                    <customer_edit_tab_purchases>SM_Xpurchase_Block_Customer_Edit_Tab_Purchases</customer_edit_tab_purchases>
+                </rewrite>
+            </xpurchase>
+            <adminhtml>
+                <rewrite>
+                    <customer_edit_tabs>SM_Xpurchase_Block_Customer_Edit_Tabs</customer_edit_tabs>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+    </global>
+</config>

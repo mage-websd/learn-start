@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_CustomReviews>
+            <version>0.1.0</version>
+        </SM_CustomReviews>
+    </modules>
+	<frontend>
+        <routers>
+            <review>
+                <args>
+                    <modules>
+                        <SM_CustomReviews_Review before="Mage_Review">SM_CustomReviews_Review</SM_CustomReviews_Review>
+                    </modules>
+                </args>
+            </review>
+        </routers>
+    </frontend>
+</config>

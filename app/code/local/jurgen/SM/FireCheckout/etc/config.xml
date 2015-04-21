@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_FireCheckout>
+            <version>0.1.1</version>
+        </SM_FireCheckout>
+    </modules>
+    <global>
+        <models>
+            <sm_firecheckout>
+                <class>SM_FireCheckout_Model</class>
+            </sm_firecheckout>
+        </models>
+        <resources>
+            <sm_firecheckout_setup>
+                <setup>
+                    <module>SM_FireCheckout</module>
+                </setup>
+            </sm_firecheckout_setup>
+        </resources>
+    </global>
+</config>

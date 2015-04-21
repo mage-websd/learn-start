@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Rewrite>
+            <version>0.1.0</version>
+        </SM_Rewrite>
+    </modules>
+    <global>
+        <models>
+            <sm_rewrite>
+                <class>SM_Rewrite_Model</class>
+            </sm_rewrite>
+        </models>
+        <blocks>
+            <sm_rewrite>
+                <class>SM_Rewrite_Block</class>
+            </sm_rewrite>
+        </blocks>
+        <helpers>
+            <sm_rewrite>
+                <class>SM_Rewrite_Helper</class>
+            </sm_rewrite>
+        </helpers>
+        <resources>
+            <sm_rewrite_setup>
+                <setup>
+                    <module>SM_Rewrite</module>
+                </setup>
+            </sm_rewrite_setup>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <checkout>
+                <args>
+                    <modules>
+                        <sm_rewrite before="Mage_Checkout">SM_Rewrite</sm_rewrite>
+                    </modules>
+                </args>
+            </checkout>
+        </routers>
+    </frontend>
+</config>

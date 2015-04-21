@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Locations>
+            <version>0.1.2</version>
+        </SM_Locations>
+    </modules>
+
+    <frontend>
+        <routers>
+            <sm_locations>
+                <use>standard</use>
+                <args>
+                    <module>SM_Locations</module>
+                    <frontName>locations</frontName>
+                </args>
+            </sm_locations>
+        </routers>
+        <layout>
+            <updates>
+                <sm_locations>
+                    <file>locations.xml</file>
+                </sm_locations>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <models>
+            <sm_locations>
+                <class>SM_Locations_Model</class>
+                <resourceModel>sm_locations_resource</resourceModel>
+            </sm_locations>
+            <sm_locations_resource>
+                <class>SM_Locations_Model_Resource</class>
+                <entities>
+                    <locations>
+                        <table>locations</table>
+                    </locations>
+                </entities>
+            </sm_locations_resource>
+        </models>
+
+        <blocks>
+            <sm_locations>
+                <class>SM_Locations_Block</class>
+            </sm_locations>
+        </blocks>
+        <helpers>
+            <sm_locations>
+                <class>SM_Locations_Helper</class>
+            </sm_locations>
+        </helpers>
+        <resources>
+            <sm_locations_setup>
+                <setup>
+                    <module>SM_Locations</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+            </sm_locations_setup>
+        </resources>
+        <template>
+            <email>
+                <locations_email_template module="sm_locations">
+                    <label>Email Location</label>
+                    <file>location.html</file>
+                    <type>html</type>
+                </locations_email_template>
+                <location_email_home module="sm_locations">
+                    <label>Email Location</label>
+                    <file>location_home.html</file>
+                    <type>html</type>
+                </location_email_home>
+            </email>
+        </template>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <SM_Locations before="Mage_Adminhtml">SM_Locations_Adminhtml</SM_Locations>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <sm_locations>
+                    <file>admin_locations.xml</file>
+                </sm_locations>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

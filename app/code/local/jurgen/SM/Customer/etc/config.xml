@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Customer>
+            <version>0.1.0</version>
+        </SM_Customer>
+    </modules>
+    <frontend>
+        <routers>
+            <customer>
+                <args>
+                    <modules>
+                        <SM_Customer before="Mage_Customer">SM_Customer</SM_Customer>                        
+                    </modules>
+                </args>
+            </customer>
+        </routers>
+    </frontend>
+</config>

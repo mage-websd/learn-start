@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_ProductTop>
+            <version>0.0.1</version>
+        </SM_ProductTop>
+    </modules>
+    <frontend>
+        <routers>
+            <sm_producttop>
+                <use>standard</use>
+                <args>
+                    <module>SM_ProductTop</module>
+                    <frontName>New30</frontName>
+                </args>
+            </sm_producttop>
+        </routers>
+        <layout>
+            <updates>
+                <sm_producttop>
+                    <file>sm/inventory/inventory.xml</file>
+                </sm_producttop>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <blocks>
+            <sm_producttop>
+                <class>SM_ProductTop_Block</class>
+            </sm_producttop>
+        </blocks>
+    </global>
+</config>
+

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+
+<config>
+
+    <modules>
+        <SM_Manufacturers>
+            <version>0.1.0</version>
+        </SM_Manufacturers>
+    </modules>
+
+    <admin>
+        <routers>
+            <manufacturersadmin>
+                <args>
+                    <modules>
+                        <sm_manufacturers before="FME_Manufacturers">SM_Manufacturers</sm_manufacturers>
+                    </modules>
+                </args>
+            </manufacturersadmin>
+        </routers>
+    </admin>
+
+    <frontend>
+        <routers>
+            <manufacturers>
+                <args>
+                    <modules>
+                        <sm_manufacturers before="FME_Manufacturers">SM_Manufacturers</sm_manufacturers>
+                    </modules>
+                </args>
+            </manufacturers>
+        </routers>
+    </frontend>
+
+    <global>
+        <models>
+            <manufacturers>
+                <rewrite>
+                    <manufacturers>SM_Manufacturers_Model_Manufacturers</manufacturers>
+                </rewrite>
+            </manufacturers>
+            <manufacturers_mysql4>
+                <rewrite>
+                    <manufacturers>SM_Manufacturers_Model_Mysql4_Manufacturers</manufacturers>
+                </rewrite>
+            </manufacturers_mysql4>
+        </models>
+
+        <resources>
+            <sm_manufacturers_setup>
+                <setup>
+                    <module>SM_Manufacturers</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+            </sm_manufacturers_setup>
+        </resources>
+
+        <blocks>
+            <SM_Manufacturers>
+                <class>SM_Manufacturers_Block</class>
+            </SM_Manufacturers>
+
+            <manufacturers>
+                <rewrite>
+                    <adminhtml_manufacturers_edit_tab_products>SM_Manufacturers_Block_Adminhtml_Manufacturers_Edit_Tab_Products</adminhtml_manufacturers_edit_tab_products>
+                </rewrite>
+            </manufacturers>
+
+            <manufacturers>
+                <rewrite>
+                    <product_list>SM_Manufacturers_Block_Product_List</product_list>
+                </rewrite>
+            </manufacturers>
+        </blocks>
+    </global>
+
+</config>

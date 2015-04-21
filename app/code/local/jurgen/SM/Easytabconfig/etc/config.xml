@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Easytabconfig>
+            <version>0.1.1</version>
+        </SM_Easytabconfig>
+    </modules>
+    <global>
+        <resources>
+            <sm_easytabconfig_setup>
+                <setup>
+                    <module>SM_Easytabconfig</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+            </sm_easytabconfig_setup>
+        </resources>
+    </global>
+</config>

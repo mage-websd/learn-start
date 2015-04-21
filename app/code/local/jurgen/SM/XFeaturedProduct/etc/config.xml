@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_XFeaturedProduct>
+            <version>0.1.0</version>
+        </SM_XFeaturedProduct>
+    </modules>
+
+    <frontend>
+        <routers>
+            <xfeaturedproduct>
+                <use>standard</use>
+                <args>
+                    <module>SM_XFeaturedProduct</module>
+                    <frontName>featuredproduct</frontName>
+                </args>
+            </xfeaturedproduct>
+        </routers>
+        <layout>
+            <updates>
+                <xfeaturedproduct>
+                    <file>sm_xfeaturedproduct.xml</file>
+                </xfeaturedproduct>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+    	<blocks>
+    		<xfeaturedproduct>
+                <class>SM_XFeaturedProduct_Block</class>
+            </xfeaturedproduct>
+    	</blocks>
+    </global>
+</config>

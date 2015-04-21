@@ -1,0 +1,78 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    Mage
+ * @package     Mage_Catalog
+ * @copyright   Copyright (c) 2009 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+/**
+ * Catalog breadcrumbs
+ *
+ * @package     Mage
+ * @subpackage  Mage_Catalog
+ * @copyright   Varien (c) 2007 (http://www.varien.com)
+ * @license     http://www.opensource.org/licenses/osl-3.0.php
+ * @author      Magento Core Team <core@magentocommerce.com>
+ */
+class SM_OverideCore_Block_Catalog_Breadcrumbs extends Mage_Catalog_Block_Breadcrumbs
+{
+    /**
+     * Preparing layout
+     *
+     * @return Mage_Catalog_Block_Breadcrumbs
+     */
+    protected function _prepareLayout()
+    {
+        if ($breadcrumbsBlock = $this->getLayout()->getBlock('breadcrumbs')) {
+            $breadcrumbsBlock->addCrumb('home', array(
+                'label'=>Mage::helper('catalog')->__('Home'),
+                'title'=>Mage::helper('catalog')->__('Go to Home Page'),
+                'link'=>Mage::getBaseUrl()
+            ));
+
+            $title = array();
+            $path  = Mage::helper('catalog')->getBreadcrumbPath();
+
+            foreach ($path as $name => $breadcrumb) {
+                $breadcrumbsBlock->addCrumb($name, $breadcrumb);
+                $title[] = $breadcrumb['label'];
+            }
+
+            /*
+             * Change core
+             * Exceed - filter out the excess info from the page title so it shows just the category or product info
+             * */
+            if(count($title)>0)
+            {
+                $n = array();
+                //$ntitle[] = $title[0];
+                $n[] = $title[count($title)-1];
+                $title=$n;
+            }
+
+            if ($headBlock = $this->getLayout()->getBlock('head')) {
+                $headBlock->setTitle(join($this->getTitleSeparator(), array_reverse($title)));
+            }
+        }
+        return parent::_prepareLayout();
+    }
+}
+

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <smartosc_extensions translate="label" module="xsmartosc">
+            <label>SmartOSC Extensions</label>
+            <sort_order>186</sort_order>
+        </smartosc_extensions>
+    </tabs>
+</config>

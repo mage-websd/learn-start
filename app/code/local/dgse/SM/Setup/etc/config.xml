@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Setup>
+            <version>0.8.15</version>
+        </SM_Setup>
+    </modules>
+    <global>
+        <resources>
+            <sm_setup_setup>
+                <setup>
+                    <module>SM_Setup</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+            </sm_setup_setup>
+
+            <sm_setup_attribute>
+                <setup>
+                    <module>SM_Setup</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+            </sm_setup_attribute>
+        </resources>
+        <helpers>
+            <sm_setup>
+                <class>SM_Setup_Helper</class>
+            </sm_setup>
+        </helpers>
+    </global>
+</config>
+

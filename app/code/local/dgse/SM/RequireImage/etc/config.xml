@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_RequireImage>
+            <version>0.1.0</version>
+        </SM_RequireImage>
+    </modules>
+    <global>
+        <blocks>
+            <catalog>
+                <rewrite>
+                    <product_list>SM_RequireImage_Block_Catalog_Product_List</product_list>
+                </rewrite>
+            </catalog>
+        </blocks>
+        <models>
+            <catalog_resource>
+                <rewrite>
+                    <layer_filter_attribute>SM_RequireImage_Model_Resource_Catalog_Layer_Filter_Attribute</layer_filter_attribute>
+                </rewrite>
+            </catalog_resource>
+        </models>
+    </global>
+</config>

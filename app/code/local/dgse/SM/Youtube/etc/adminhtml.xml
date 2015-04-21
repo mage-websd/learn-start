@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <sm_youtube translate="title" module="sm_youtube">
+            <title>Manage Blog</title>
+            <sort_order>100</sort_order>
+            <children>
+                <manage translate="title" module="sm_youtube">
+                    <title>Manage Youtube</title>
+                    <action>youtube/adminhtml_youtube</action>
+                    <sort_order>0</sort_order>
+                </manage>
+            </children>
+         </sm_youtube>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <sm_youtube translate="title" module="sm_youtube">
+                        <title>Blog</title>
+                        <sort_order>40</sort_order>
+                        <children>
+                            <manage translate="title">
+                                <title>Manage Youtube</title>
+                                <sort_order>10</sort_order>
+                            </manage>
+                        </children>
+                    </sm_youtube>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

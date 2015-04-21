@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Setup>
+            <version>0.1.1</version>
+        </SM_Setup>
+    </modules>
+    <global>
+        <resources>
+            <sm_setup_email_template>
+                <setup>
+                    <module>SM_Setup</module>
+                </setup>
+            </sm_setup_email_template>
+            <sm_setup_setup>
+                <setup>
+                    <module>SM_Setup</module>
+                </setup>
+            </sm_setup_setup>
+        </resources>
+    </global>
+</config>

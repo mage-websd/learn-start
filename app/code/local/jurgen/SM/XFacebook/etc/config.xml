@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_XFacebook>
+            <version>1.1.6</version>
+        </SM_XFacebook>
+    </modules>
+    <global>
+        <events>
+            <checkout_type_onepage_save_order_after>
+                <observers>
+                    <xfacebook_checkout_observer>
+                        <type>singleton</type>
+                        <class>xfacebook/observer</class>
+                        <method>afterSaveOrder</method>
+                    </xfacebook_checkout_observer>
+                </observers>
+            </checkout_type_onepage_save_order_after>
+        </events>
+        <models>
+            <xfacebook>
+                <class>SM_XFacebook_Model</class>
+            </xfacebook>
+        </models>
+        <helpers>
+            <xfacebook>
+                <class>SM_XFacebook_Helper</class>
+            </xfacebook>
+        </helpers>
+        <blocks>
+            <xfacebook>
+                <class>SM_XFacebook_Block</class>
+            </xfacebook>
+        </blocks>
+    </global>
+	<adminhtml>
+	<menu>
+        <smartosc_extensions>        
+            <children>
+                <xfacebook translate="title" module="xfacebook">
+                    <title>X-Facebook</title>
+                    <action>adminhtml/system_config/edit/section/xfacebook/</action>
+                    <sort_order>1</sort_order>
+                </xfacebook>
+            </children>
+        </smartosc_extensions>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <smartosc_extensions>
+                        <children>
+                            <xfacebook translate="title" module="xfacebook">
+                                <title>X-Facebook Menu</title>
+                                <sort_order>1</sort_order>                            
+                            </xfacebook>
+                        </children>
+                    </smartosc_extensions>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <xfacebook translate="title" module="xfacebook">
+                                        <title>X-Facebook Sections</title>
+                                        <sort_order>100</sort_order>
+                                    </xfacebook>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+	</adminhtml>
+    <frontend>
+        <routers>
+            <xfacebook>
+                <use>standard</use>
+                <args>
+                    <module>SM_XFacebook</module>
+                    <frontName>xfacebook</frontName>
+                </args>
+            </xfacebook>
+        </routers>
+        <layout>
+            <updates>
+                <xfacebook>
+                    <file>sm/xfacebook.xml</file>
+                </xfacebook>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <SM_XFacebook>
+                    <files>
+                        <default>sm/xfacebook.csv</default>
+                    </files>
+                </SM_XFacebook>
+            </modules>
+        </translate>
+        <events>
+            <controller_action_layout_render_before>
+                <observers>
+                    <check_validity>
+                        <type>singleton</type>
+                        <class>SM_XFacebook_Model_Observer</class>
+                        <method>checkLicense</method>
+                    </check_validity>                    
+                </observers>
+            </controller_action_layout_render_before>
+        </events>        
+    </frontend>
+    <default>
+        <xfacebook>
+            <customer_wall>
+                <after_order><![CDATA[I've just purchased a great stuff at {{var store.getFrontendName()}}]]></after_order>
+                <after_connect><![CDATA[I've just connected with {{var store.getFrontendName()}}]]></after_connect>
+            </customer_wall>
+            <store_wall>
+                <after_order><![CDATA[{{var customer.getName()}} just purchased a great stuff at {{var store.getFrontendName()}}]]></after_order>
+                <after_connect><![CDATA[{{var customer.getName()}} just connected with {{var store.getFrontendName()}}]]></after_connect>
+            </store_wall>
+        </xfacebook>
+    </default>
+</config>

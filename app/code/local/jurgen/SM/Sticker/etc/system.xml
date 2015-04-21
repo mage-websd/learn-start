@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <templates_master translate="label" module="sticker">
+            <label>Smart Extension</label>
+            <sort_order>196</sort_order>
+        </templates_master>
+    </tabs>
+    <sections>
+        <sm_sticker translate="label" module="sticker">
+            <label>Sale/New Stickers</label>
+            <tab>templates_master</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>Sale/New Stickers for product images - Default settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled_sale translate="label">
+                            <label>Enable SALE stickers by default</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled_sale>
+                        <enabled_new translate="label">
+                            <label>Enable NEW stickers by default</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled_new>
+                        <sale_sticker_style translate="label">
+                            <label>SALE Stickers Style</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sticker/system_config_source_style</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sale_sticker_style>
+                        <sale_text_content translate="label">
+                            <label>SALE Text Content</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sticker/system_config_source_content</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sale_text_content>
+                        <new_sticker_style translate="label">
+                            <label>NEW Sticker Style</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sticker/system_config_source_stickerstyle</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </new_sticker_style>
+                        <!--<vertical_align translate="label">
+                            <label>Vertical Align</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sticker/system_config_source_align</source_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </vertical_align>-->
+                        <translation_sale translate="label comment">
+                            <label>Word Translation:"SALE"(max.8 chars)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </translation_sale>
+                        <translation_new translate="label comment">
+                            <label>Word Translation:"NEW"(max.8 chars)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </translation_new>
+                        <translation_off translate="label comment">
+                            <label>Word Translation:"OFF"(max.8 chars)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </translation_off>
+                    </fields>
+                </general>
+            </groups>
+        </sm_sticker>
+    </sections>
+</config>

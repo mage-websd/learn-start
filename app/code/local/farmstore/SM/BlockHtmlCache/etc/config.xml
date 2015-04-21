@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_BlockHtmlCache>
+            <version>1.0.0</version>
+        </SM_BlockHtmlCache>
+    </modules>
+    <global>
+        <models>
+            <sm_blockhtmlcache>
+                <class>SM_BlockHtmlCache_Model</class>
+            </sm_blockhtmlcache>
+        </models>
+    </global>
+    <crontab>
+        <jobs>
+            <auto_update_cache>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>sm_blockhtmlcache/observer::autoUpdateCache</model>
+                </run>
+            </auto_update_cache>
+        </jobs>
+    </crontab>
+</config>

@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Xpermission>
+            <version>0.1.0</version>
+        </SM_Xpermission>
+    </modules>
+
+    <global>
+        <blocks>
+            <adminhtml>
+                <rewrite>
+                    <permissions_user_grid>SM_Xpermission_Block_Permissions_User_Grid</permissions_user_grid>
+                    <permissions_user_edit_tab_main>SM_Xpermission_Block_Permissions_User_Edit_Tab_Main</permissions_user_edit_tab_main>
+                    <permissions_role_grid_user>SM_Xpermission_Block_Permissions_Role_Grid_User</permissions_role_grid_user>
+
+                    <system_store_grid>SM_Xpermission_Block_System_Store_Grid</system_store_grid>
+                    <system_store_store>SM_Xpermission_Block_System_Store_Store</system_store_store>
+                    <system_store_edit_form>SM_Xpermission_Block_System_Store_Edit_Form</system_store_edit_form>
+                    <system_config_switcher>SM_Xpermission_Block_System_Config_Switcher</system_config_switcher>
+                    <system_email_template_grid>SM_Xpermission_Block_System_Email_Template_Grid</system_email_template_grid>
+                    <system_email_template_edit_form>SM_Xpermission_Block_System_Email_Template_Edit_Form</system_email_template_edit_form>
+
+                    <store_switcher>SM_Xpermission_Block_Store_Switcher</store_switcher>
+                    <catalog_category_tree>SM_Xpermission_Block_Catalog_Category_Tree</catalog_category_tree>
+                    <catalog_category_tab_product>SM_Xpermission_Block_Catalog_Category_Tab_Product</catalog_category_tab_product>
+                    <catalog_product_grid>SM_Xpermission_Block_Catalog_Product_Grid</catalog_product_grid>
+                    <catalog_product_edit_tabs>SM_Xpermission_Block_Catalog_Product_Edit_Tabs</catalog_product_edit_tabs>
+                    <catalog_search_grid>SM_Xpermission_Block_Catalog_Search_Grid</catalog_search_grid>
+
+                    <customer_grid>SM_Xpermission_Block_Customer_Grid</customer_grid>
+                    <customer_edit_tab_account>SM_Xpermission_Block_Customer_Edit_Tab_Account</customer_edit_tab_account>
+                    <customer_online_grid>SM_Xpermission_Block_Customer_Online_Grid</customer_online_grid>
+
+                    <cms_page_grid>SM_Xpermission_Block_Cms_Page_Grid</cms_page_grid>
+                    <cms_block_grid>SM_Xpermission_Block_Cms_Block_Grid</cms_block_grid>
+
+                    <checkout_agreement_grid>SM_Xpermission_Block_Checkout_Agreement_Grid</checkout_agreement_grid>
+
+                    <poll_grid>SM_Xpermission_Block_Poll_Grid</poll_grid>
+                    <poll_edit_tab_form>SM_Xpermission_Block_Poll_Edit_Tab_Form</poll_edit_tab_form>
+
+                    <widget_grid_column_filter_store>SM_Xpermission_Block_Widget_Grid_Column_Filter_Store</widget_grid_column_filter_store>
+                    <!--override report  9 phat  còn những chú # kế thừa từ report/grid nên chỉ cần override report/grid-->
+                    <report_grid>SM_Xpermission_Block_Report_Grid</report_grid>
+                    <!--ShoppingCart  2-->
+                    <report_shopcart_abandoned_grid>SM_Xpermission_Block_Report_Shopcart_Abandoned_Grid</report_shopcart_abandoned_grid>
+                    <report_shopcart_product_grid>SM_Xpermission_Block_Report_Shopcart_Product_Grid</report_shopcart_product_grid>
+                    <!--Reviews  2-->
+                    <report_review_customer_grid>SM_Xpermission_Block_Report_Review_Customer_Grid</report_review_customer_grid>
+                    <report_review_product_grid>SM_Xpermission_Block_Report_Review_Product_Grid</report_review_product_grid>
+                    <!--Tag   3-->
+                    <report_tag_customer_grid>SM_Xpermission_Block_Report_Tag_Customer_Grid</report_tag_customer_grid>
+                    <report_tag_popular_grid>SM_Xpermission_Block_Report_Tag_Popular_Grid</report_tag_popular_grid>
+                    <report_tag_product_grid>SM_Xpermission_Block_Report_Tag_Product_Grid</report_tag_product_grid>
+                    <!--Search  1-->
+                    <report_search_grid>SM_Xpermission_Block_Report_Search_Grid</report_search_grid>
+                    <!--end-->
+                    <sales_order_grid>SM_Xpermission_Block_Sales_Order_Grid</sales_order_grid>
+                    <sales_invoice_grid>SM_Xpermission_Block_Sales_Invoice_Grid</sales_invoice_grid>
+                    <sales_shipment_grid>SM_Xpermission_Block_Sales_Shipment_Grid</sales_shipment_grid>
+                    <sales_creditmemo_grid>SM_Xpermission_Block_Sales_Creditmemo_Grid</sales_creditmemo_grid>
+                    <sales_order_create_store_select>SM_Xpermission_Block_Sales_Order_Create_Store_Select</sales_order_create_store_select>
+                    <!--Newsletter-->
+                    <newsletter_template_edit_form>SM_Xpermission_Block_Newsletter_Template_Edit_Form</newsletter_template_edit_form>
+                    <newsletter_template_grid>SM_Xpermission_Block_Newsletter_Template_Grid</newsletter_template_grid>
+                    <newsletter_queue_grid>SM_Xpermission_Block_Newsletter_Queue_Grid</newsletter_queue_grid>
+                    <newsletter_subscriber_grid>SM_Xpermission_Block_Newsletter_Subscriber_Grid</newsletter_subscriber_grid>
+                    <newsletter_problem_grid>SM_Xpermission_Block_Newsletter_Problem_Grid</newsletter_problem_grid>
+                    <!--Promotions-->
+                    <promo_catalog_grid>SM_Xpermission_Block_Promo_Catalog_Grid</promo_catalog_grid>
+                    <promo_catalog_edit_tab_main>SM_Xpermission_Block_Promo_Catalog_Edit_Tab_Main</promo_catalog_edit_tab_main>
+                    <promo_quote_grid>SM_Xpermission_Block_Promo_Quote_Grid</promo_quote_grid>
+                    <promo_quote_edit_tab_main>SM_Xpermission_Block_Promo_Quote_Edit_Tab_Main</promo_quote_edit_tab_main>
+                    <!--Catelog -> Tags -->
+                    <tag_grid_pending>SM_Xpermission_Block_Tag_Grid_Pending</tag_grid_pending>
+                    <tag_tag_grid>SM_Xpermission_Block_Tag_Tag_Grid</tag_tag_grid>
+
+                    <review_grid>SM_Xpermission_Block_Review_Grid</review_grid>
+                    <rating_grid>SM_Xpermission_Block_Rating_Grid</rating_grid>
+
+                    <urlrewrite_grid>SM_Xpermission_Block_Urlrewrite_Grid</urlrewrite_grid>
+                    <system_design_grid>SM_Xpermission_Block_System_Design_Grid</system_design_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <models>
+            <xpermission>
+                <class>SM_Xpermission_Model</class>
+                <resourceModel>xpermission_mysql4</resourceModel>
+            </xpermission>
+            <xpermission_mysql4>
+                <class>SM_Xpermission_Model_Mysql4</class>
+                <entities>
+                    <root>
+                        <table>sm_xpermission_root</table>
+                    </root>
+                    <user_website>
+                        <table>sm_xpermission_user_wesbite</table>
+                    </user_website>
+                    <email_template_website>
+                        <table>sm_xpermission_email_template_wesbite</table>
+                    </email_template_website>
+                    <newsletter_template_website>
+                        <table>sm_xpermission_newsletter_template_website</table>
+                    </newsletter_template_website>
+                </entities>
+            </xpermission_mysql4>
+
+            <admin_mysql4>
+                <rewrite>
+                    <user>SM_Xpermission_Model_Mysql4_User</user>
+                    <user_collection>SM_Xpermission_Model_Mysql4_User_Collection</user_collection>
+                    <roles_user_collection>SM_Xpermission_Model_Mysql4_Roles_User_Collection</roles_user_collection>
+                </rewrite>
+            </admin_mysql4>
+            <catalog_resource_eav_mysql4>
+                <rewrite>
+                    <category>SM_Xpermission_Model_Resource_Eav_Mysql4_Category</category>
+                    <category_collection>SM_Xpermission_Model_Resource_Eav_Mysql4_Category_Collection</category_collection>
+                    <product>SM_Xpermission_Model_Resource_Eav_Mysql4_Product</product>
+                </rewrite>
+            </catalog_resource_eav_mysql4>
+            <cms_mysql4>
+                <rewrite>
+                    <page_collection>SM_Xpermission_Model_Mysql4_Page_Collection</page_collection>
+                    <block_collection>SM_Xpermission_Model_Mysql4_Block_Collection</block_collection>
+                </rewrite>
+            </cms_mysql4>
+            <checkout_mysql4>
+                <rewrite>
+                    <agreement_collection>SM_Xpermission_Model_Mysql4_Agreement_Collection</agreement_collection>
+                </rewrite>
+            </checkout_mysql4>
+            <core_store_mysql4>
+                <store_collection>SM_Xpermission_Model_Mysql4_Store_Collection</store_collection>
+            </core_store_mysql4>
+            <admin>
+                <rewrite>
+                    <user>SM_Xpermission_Model_Admin_User</user>
+                </rewrite>
+            </admin>
+            <adminhtml>
+                <rewrite>
+                    <system_store>SM_Xpermission_Model_System_Store</system_store>
+                </rewrite>
+            </adminhtml>
+            <poll_mysql4>
+                <rewrite>
+                    <poll>SM_Xpermission_Model_Mysql4_Poll</poll>
+                    <poll_collection>SM_Xpermission_Model_Mysql4_Poll_Collection</poll_collection>
+                </rewrite>
+            </poll_mysql4>
+            <core_mysql4>
+                <rewrite>
+                    <email_template>SM_Xpermission_Model_Mysql4_Email_Template</email_template>
+                    <email_template_collection>SM_Xpermission_Model_Mysql4_Email_Template_Collection</email_template_collection>
+                    <url_rewrite_collection>SM_Xpermission_Model_Mysql4_Url_Rewrite_Collection</url_rewrite_collection>
+                    <design_collection>SM_Xpermission_Model_Mysql4_Design_Collection</design_collection>
+                </rewrite>
+            </core_mysql4>
+            <reports_mysql4>
+                <rewrite>
+                    <report_collection>SM_Xpermission_Model_Mysql4_Reports_Report_Collection</report_collection>
+                    <!--Reports -> Tags-->
+                    <tag_customer_collection>SM_Xpermission_Model_Mysql4_Reports_Tag_Customer_Collection</tag_customer_collection>
+                    <tag_collection>SM_Xpermission_Model_Mysql4_Reports_Tag_Collection</tag_collection>
+                    <tag_product_collection>SM_Xpermission_Model_Mysql4_Reports_Tag_Product_Collection</tag_product_collection>
+                    <!--Reports -> Shopping cart-->
+                    <product_collection>SM_Xpermission_Model_Mysql4_Reports_Product_Collection</product_collection>
+                    <quote_collection>SM_Xpermission_Model_Mysql4_Reports_Quote_Collection</quote_collection>
+                    <!--Reports -> Reviews-->
+                    <review_collection>SM_Xpermission_Model_Mysql4_Reports_Review_Collection</review_collection>
+                    <review_customer_collection>SM_Xpermission_Model_Mysql4_Reports_Review_Customer_Collection</review_customer_collection>
+                </rewrite>
+            </reports_mysql4>
+            <!--Reports -> Search Terms-->
+            <catalogsearch_mysql4>
+                <rewrite>
+                    <query>SM_Xpermission_Model_Mysql4_CatalogSearch_Query</query>
+                    <query_collection>SM_Xpermission_Model_Mysql4_Reports_Query_Collection</query_collection>
+                </rewrite>
+            </catalogsearch_mysql4>
+            <checkout_mysql4>
+                <rewrite>
+                    <agreement_collection>SM_Xpermission_Model_Mysql4_Agreement_Collection</agreement_collection>
+                </rewrite>
+            </checkout_mysql4>
+            <!--end-->
+            <!--Newsletter-->
+            <newsletter_mysql4>
+                <rewrite>
+                    <template_collection>SM_Xpermission_Model_Mysql4_Newsletter_Template_Collection</template_collection>
+                    <template>SM_Xpermission_Model_Mysql4_Newsletter_Template</template>
+                    <queue_collection>SM_Xpermission_Model_Mysql4_Newsletter_Queue_Collection</queue_collection>
+                    <queue>SM_Xpermission_Model_Mysql4_Newsletter_Queue</queue>
+                    <subscriber_collection>SM_Xpermission_Model_Mysql4_Newsletter_Subscriber_Collection</subscriber_collection>
+                    <problem_collection>SM_Xpermission_Model_Mysql4_Newsletter_Problem_Collection</problem_collection>
+                </rewrite>
+            </newsletter_mysql4>
+            <!--end-->
+            <!--Promotions-->
+            <catalogrule_mysql4>
+                <rewrite>
+                    <rule>SM_Xpermission_Model_Mysql4_CatalogRule_Rule</rule>
+                </rewrite>
+            </catalogrule_mysql4>
+            <salesrule_mysql4>
+                <rewrite>
+                    <rule>SM_Xpermission_Model_Mysql4_SalesRule_Rule</rule>
+                </rewrite>
+            </salesrule_mysql4>
+            <!--Catalog->Tags-->
+            <tag_mysql4>
+                <rewrite>
+                    <tag_collection>SM_Xpermission_Model_Mysql4_Tag_Collection</tag_collection>
+                </rewrite>
+            </tag_mysql4>
+
+            <review_mysql4>
+                <rewrite>
+                    <review>SM_Xpermission_Model_Mysql4_Review</review>
+                    <review_product_collection>SM_Xpermission_Model_Mysql4_Review_Product_Collection</review_product_collection>
+                </rewrite>
+            </review_mysql4>
+            <rating_mysql4>
+                <rewrite>
+                    <rating>SM_Xpermission_Model_Mysql4_Rating</rating>
+                </rewrite>
+            </rating_mysql4>
+        </models>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <xpermission before="Mage_Adminhtml">SM_Xpermission</xpermission>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
